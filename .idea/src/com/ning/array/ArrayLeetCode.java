@@ -15,8 +15,10 @@ public class ArrayLeetCode {
 //        System.out.println(getManyNumber(new int[]{1,1,1,1,1,1,1,2,3,4,5,6,7,8,9,9,8,8,8,9,9}));
 //        System.out.println(getManyNumber(new int[]{2,3,3,3,4,5,5,5,5}));
 //        System.out.println(getManyNumberOptimization(new int[]{7,8,9,9,10,10,10}));
-        System.out.println(Arrays.toString(orderArraySort(new int[]{-7,-6,-4,-1,0,2,5,8})));
-        System.out.println(Arrays.toString(orderArraySortOptimization(new int[]{-7,-6,-4,-1,0,2,5,8})));
+
+//        System.out.println(Arrays.toString(orderArraySort(new int[]{-7,-6,-4,-1,0,2,5,8})));
+//        System.out.println(Arrays.toString(orderArraySortOptimization(new int[]{-7,-6,-4,-1,0,2,5,8})));
+        System.out.println(sumOddSubArrays(new int[]{1,2})); // 10 11 12  // 1 2
     }
     //转置矩阵
     public static int[][] transPose(int[][] arry) {
@@ -137,5 +139,33 @@ public class ArrayLeetCode {
             ++changStart;
         }
         return newArray;
+    }
+    /**
+     * time:2021/3/7 (1588)所有奇数长度子数组的和
+     * 给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。
+     * 子数组 定义为原数组中的一个连续子序列。
+     * 请你返回 arr 中 所有奇数长度子数组的和 。
+     * 时间复杂度o(n) 空间复杂度o(1)
+     */
+    public static int sumOddSubArrays(int[] arry) {
+        int sum = 0;
+        for(int i = 0;i < arry.length;i++) {
+            //arry = [10,11,12] arry = [1,2]
+            //2 5 8 9 12 7 6 i=2时 左边有三种情况 取0个数 1个数 2个数即{8}，{8，5}，{8，5，2} 左边的情况就是i+1种情况
+            int left = i+1;
+            //右边同理
+            int right = arry.length-(i+1)+ 1;
+            //左边的情况 只有一个数的时候才是奇数的情况即{5} 这里的8是它的本身目前可以忽略 所以左边奇数种情况是left/2
+            int left_odd = left/2;
+            //左边的情况 只有0个或者两个数的时候才是偶数的情况即{}，{5，2} 所以左边偶数中情况是(left+1)/2
+            int left_even = (left+1)/2;
+            //右边奇数种情况同理
+            int right_odd = right/2;
+            //右边偶数种情况同理
+            int right_even = (right+1)/2;
+            //排列组合 左边奇 右边奇 加上它本身还是奇数种情况 左边偶 右边偶 加上它本身还是奇数种情况即左奇*右奇+左偶*右偶
+            sum += arry[i] * (left_odd * right_odd + left_even * right_even);
+        }
+        return sum;
     }
 }
