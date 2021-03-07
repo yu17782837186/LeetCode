@@ -23,8 +23,8 @@
       <file leaf-file-name="ArrayLeetCode.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+            <state relative-caret-position="74">
+              <caret line="122" column="47" lean-forward="true" selection-start-line="122" selection-start-column="47" selection-end-line="122" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -210,12 +210,12 @@
       <workItem from="1614923859768" duration="1291000" />
       <workItem from="1614932176728" duration="7723000" />
       <workItem from="1615020636759" duration="6042000" />
-      <workItem from="1615113916281" duration="1512000" />
+      <workItem from="1615113916281" duration="2195000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17204000" />
+    <option name="totallyTimeSpent" value="17887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -307,8 +307,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        <state relative-caret-position="74">
+          <caret line="122" column="47" lean-forward="true" selection-start-line="122" selection-start-column="47" selection-end-line="122" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
