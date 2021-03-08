@@ -18,7 +18,9 @@ public class ArrayLeetCode {
 
 //        System.out.println(Arrays.toString(orderArraySort(new int[]{-7,-6,-4,-1,0,2,5,8})));
 //        System.out.println(Arrays.toString(orderArraySortOptimization(new int[]{-7,-6,-4,-1,0,2,5,8})));
-        System.out.println(sumOddSubArrays(new int[]{1,2})); // 10 11 12  // 1 2
+
+//        System.out.println(sumOddSubArrays(new int[]{1,2})); // 10 11 12  // 1 2
+        System.out.println(maxMultiplyOptimization(new int[]{-8,-10,3,4}));
     }
     //转置矩阵
     public static int[][] transPose(int[][] arry) {
@@ -157,7 +159,7 @@ public class ArrayLeetCode {
             int right = arry.length-(i+1)+ 1;
             //左边的情况 只有一个数的时候才是奇数的情况即{5} 这里的8是它的本身目前可以忽略 所以左边奇数种情况是left/2
             int left_odd = left/2;
-            //左边的情况 只有0个或者两个数的时候才是偶数的情况即{}，{5，2} 所以左边偶数中情况是(left+1)/2
+            //左边的情况 只有0个或者两个数的时候才是偶数的情况即{}，{5，2} 所以左边偶数种情况是(left+1)/2
             int left_even = (left+1)/2;
             //右边奇数种情况同理
             int right_odd = right/2;
@@ -167,5 +169,45 @@ public class ArrayLeetCode {
             sum += arry[i] * (left_odd * right_odd + left_even * right_even);
         }
         return sum;
+    }
+    /**
+     * time:2021/3/8 (628) 三个数的最大乘积
+     * 给你一个整型数组 nums ，在数组中找出由三个数组成的最大乘积，并输出这个乘积。
+     * 时间复杂度o(nlogn) 空间复杂度o(logn)
+     */
+    //(1)排序解法
+    public static int maxMultiply(int[] arry) {
+        Arrays.sort(arry);
+        int n = arry.length;
+        return Math.max(arry[0] * arry[1] * arry[n-1],arry[n-1] * arry[n-2] * arry[n-3]);
+    }
+    //(2)线性扫描解法 时间复杂度o(n) 空间复杂度o(1)
+    public static int maxMultiplyOptimization(int[] arry) {
+        //为负数的话 定义最小的两个负数min1 min2
+        int min1 = Integer.MAX_VALUE;
+        int min2 = Integer.MAX_VALUE;
+        //为正数的话 定义最大的三个正数max1 max2 max3
+        int max1 = Integer.MIN_VALUE;
+        int max2 = Integer.MIN_VALUE;
+        int max3 = Integer.MIN_VALUE;
+        for(int i : arry) {
+            if(i < min1) {//判断是否小于最小的数
+                min2 = min1;
+                min1 = i;
+            }else if(i < min2) {//判断是否小于第二小的数
+                min2 = i;
+            }
+            if(i > max1) {//判断是否大于最大的数
+                max3 = max2;
+                max2 = max1;
+                max1 = i;
+            }else if(i > max2) {//判断是否大于第二大的数
+                max3 = max2;
+                max2 = i;
+            }else if(i > max3) {//判断是否大于第三大的数
+                max3 = i;
+            }
+        }
+        return Math.max(min1 * min2 * max1,max1 * max2 *max3);
     }
 }
