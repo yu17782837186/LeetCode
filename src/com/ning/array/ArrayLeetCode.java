@@ -20,9 +20,14 @@ public class ArrayLeetCode {
 //        System.out.println(Arrays.toString(orderArraySortOptimization(new int[]{-7,-6,-4,-1,0,2,5,8})));
 
 //        System.out.println(sumOddSubArrays(new int[]{1,2})); // 10 11 12  // 1 2
-        System.out.println(maxMultiplyOptimization(new int[]{-8,-10,3,4}));
+
+//        System.out.println(maxMultiplyOptimization(new int[]{-8,-10,3,4}));
+
+        System.out.println(isThreeOddArrays(new int[]{2,5,7,9,10,11,12}));
+        System.out.println(isThreeOddArraysBit(new int[]{2,5,0,9,10,11,12}));
+        System.out.println(isThreeOddArraysPointer(new int[]{2,5,0,9,10,11,12}));
     }
-    //转置矩阵
+    //转置矩阵1
     public static int[][] transPose(int[][] arry) {
         //原数组的行
         int row = arry.length;
@@ -209,5 +214,61 @@ public class ArrayLeetCode {
             }
         }
         return Math.max(min1 * min2 * max1,max1 * max2 *max3);
+    }
+    /**
+     * time:2021/3/3 (1550)存在连续三个奇数的数组
+     * 给你一个整数数组 arr，请你判断数组中是否存在连续三个元素都是奇数的情况：如果存在，请返回 true ；否则，返回 false 。
+     * 时间复杂度o(n) 空间复杂度o(1)
+     */
+    //(1)遍历数组
+    public static boolean isThreeOddArrays(int[] arry) {
+        int count = 0;
+        for(int i = 0;i < arry.length;i++) {
+            if(arry[i]%2 != 0) {//奇数
+                count++;
+            }else {
+                count = 0;
+            }
+            //是否存在连续的三个奇数
+            if(count == 3) {
+                return true;
+            }
+        }
+        return false;
+    }
+    //(2)位运算时间复杂度o(n)空间复杂度o(1)
+    public static boolean isThreeOddArraysBit(int[] arry) {
+        //小于数组长度减3的位置
+        for(int i = 0;i < arry.length - 3;i++) {
+            //不为0说明是连续的奇数
+            if((arry[i]&1) != 0 && (arry[i+1]&1) != 0 && (arry[i+2]&1) != 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+    //(3)双指针解法时间复杂度o(n) 空间复杂度为o(1)
+    public static boolean isThreeOddArraysPointer(int[] arry) {
+        int start = 0;
+        int end = 0;
+        int len = 0;
+        for(int i = 0;i < arry.length;i++) {
+            if(arry[i]%2 != 0) {//是奇数的情况
+                end++;
+                //区间的长度
+                len = end - start;
+                //等于3为连续的奇数
+                if(len == 3) {
+                    return true;
+                }
+            }else {//偶数的情况
+                if(len == 3) {
+                    return true;
+                }
+                start = i;
+                end = i;
+            }
+        }
+        return false;
     }
 }
