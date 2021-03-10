@@ -23,9 +23,11 @@ public class ArrayLeetCode {
 
 //        System.out.println(maxMultiplyOptimization(new int[]{-8,-10,3,4}));
 
-        System.out.println(isThreeOddArrays(new int[]{2,5,7,9,10,11,12}));
-        System.out.println(isThreeOddArraysBit(new int[]{2,5,0,9,10,11,12}));
-        System.out.println(isThreeOddArraysPointer(new int[]{2,5,0,9,10,11,12}));
+//        System.out.println(isThreeOddArrays(new int[]{2,5,7,9,10,11,12}));
+//        System.out.println(isThreeOddArraysBit(new int[]{2,5,0,9,10,11,12}));
+//        System.out.println(isThreeOddArraysPointer(new int[]{2,5,0,9,10,11,12}));
+
+        System.out.println(containsNearbyDuplicate(new int[]{2,3,5,-1,6,7,6},2));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
@@ -216,7 +218,7 @@ public class ArrayLeetCode {
         return Math.max(min1 * min2 * max1,max1 * max2 *max3);
     }
     /**
-     * time:2021/3/3 (1550)存在连续三个奇数的数组
+     * time:2021/3/9 (1550)存在连续三个奇数的数组
      * 给你一个整数数组 arr，请你判断数组中是否存在连续三个元素都是奇数的情况：如果存在，请返回 true ；否则，返回 false 。
      * 时间复杂度o(n) 空间复杂度o(1)
      */
@@ -267,6 +269,24 @@ public class ArrayLeetCode {
                 }
                 start = i;
                 end = i;
+            }
+        }
+        return false;
+    }
+    /**
+     * time:2021/3/10 219. 存在重复元素 II
+     * 给定一个整数数组和一个整数 k，判断数组中是否存在两个不同的索引 i 和 j，使得 nums [i] = nums [j]，并且 i 和 j 的差的 绝对值 至多为 k
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode-cn.com/problems/contains-duplicate-ii
+     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     * 时间复杂度o(n2) 空间复杂度o(1)
+     */
+    public static boolean containsNearbyDuplicate(int[] arry,int k) {
+        for(int i = 0;i < arry.length;i++) {
+            for(int j = Math.max(i-k,0);j < i;j++) {
+                if(arry[i] == arry[j]) {
+                    return true;
+                }
             }
         }
         return false;
