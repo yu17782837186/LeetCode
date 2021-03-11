@@ -27,7 +27,9 @@ public class ArrayLeetCode {
 //        System.out.println(isThreeOddArraysBit(new int[]{2,5,0,9,10,11,12}));
 //        System.out.println(isThreeOddArraysPointer(new int[]{2,5,0,9,10,11,12}));
 
-        System.out.println(containsNearbyDuplicate(new int[]{2,3,5,-1,6,7,6},2));
+//        System.out.println(containsNearbyDuplicate(new int[]{2,3,5,-1,6,7,6},2));
+
+        System.out.println(maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
@@ -290,5 +292,34 @@ public class ArrayLeetCode {
             }
         }
         return false;
+    }
+    /**
+     * time:2021/3/11  11. 盛最多水的容器
+     给你 n 个非负整数 a1，a2，...，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0) 。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。
+     说明：你不能倾斜容器。
+     来源：力扣（LeetCode）
+     链接：https://leetcode-cn.com/problems/container-with-most-water
+     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     时间复杂度o(n) 空间复杂度o(1)
+     */
+    public static int maxArea(int[] arry) {
+        //定义左边的底
+        int left = 0;
+        int right = arry.length-1;
+        //定义右边的底
+        int area = 0;
+        while(left < right) {
+            //选择高度较小的边进行移动
+            int height = Math.min(arry[left],arry[right]);
+            //将得到的面积与area作比较每次放入最大的面积
+            area =Math.max((right-left)*height,area);
+            //移动较小的边
+            if(arry[left] < arry[height]) {
+                left++;
+            }else {
+                right--;
+            }
+        }
+        return area;
     }
 }
