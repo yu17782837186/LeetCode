@@ -29,7 +29,9 @@ public class ArrayLeetCode {
 
 //        System.out.println(containsNearbyDuplicate(new int[]{2,3,5,-1,6,7,6},2));
 
-        System.out.println(maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
+//        System.out.println(maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
+
+        System.out.println(threeSum(new int[]{-1,0,1,2,-1,-4}));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
@@ -321,5 +323,51 @@ public class ArrayLeetCode {
             }
         }
         return area;
+    }
+    /**
+     * time:2021/3/13  15. 三数之和
+     给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
+     注意：答案中不可以包含重复的三元组。
+     来源：力扣（LeetCode）
+     链接：https://leetcode-cn.com/problems/3sum
+     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     时间复杂度o(n2) 空间复杂度o(1)
+     */
+    public static List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        int len = nums.length;
+        if(nums == null || len < 3) {
+            return result;
+        }
+        Arrays.sort(nums);//排序
+        for(int i = 0;i < len;i++) {
+            if(nums[i] > 0) {
+                break;
+            }
+            if(i > 0 && nums[i] == nums[i-1]) {//去重
+                continue;
+            }
+            int left = i+1;//左边
+            int right = len-1;//右边
+            while(left < right) {
+                int sum = nums[i]+nums[left]+nums[right];
+                if(sum == 0) {
+                    result.add(Arrays.asList(nums[i],nums[left],nums[right]));
+                    while(left < right && nums[left] == nums[left+1]) {//去重
+                        left++;
+                    }
+                    while(left < right && nums[right] == nums[right-1]) {//去重
+                        right--;
+                    }
+                    left++;
+                    right--;
+                }else if(sum < 0) {
+                    left++;
+                }else if(sum > 0) {
+                    right--;
+                }
+            }
+        }
+        return result;
     }
 }
