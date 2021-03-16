@@ -31,7 +31,9 @@ public class ArrayLeetCode {
 
 //        System.out.println(maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
 
-        System.out.println(threeSum(new int[]{-1,0,1,2,-1,-4}));
+//        System.out.println(threeSumClosest(new int[]{-1,2,1,-4},1));
+
+        System.out.println(fourNumberSum(new int[]{1,0,-1,0,-2,2},0));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
@@ -375,24 +377,111 @@ public class ArrayLeetCode {
      给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。
      时间复杂度o(n2) 空间复杂度o(1)
      */
-    public int threeSumClosest(int[] nums, int target) {
-        Arrays.sort(nums);
-        int ans = nums[0] + nums[1] + nums[2];
-        for(int i=0;i<nums.length;i++) {
-            int start = i+1, end = nums.length - 1;
-            while(start < end) {
-                int sum = nums[start] + nums[end] + nums[i];
-                if(Math.abs(target - sum) < Math.abs(target - ans))
-                    ans = sum;
-                if(sum > target)
-                    end--;
-                else if(sum < target)
-                    start++;
-                else
-                    return ans;
+    public static int threeSumClosest(int[] arry, int target) {
+        //排序
+        Arrays.sort(arry);
+        //最小的三个值为排序后的前三个数
+        int closesSum = arry[0]+arry[1]+arry[2];
+        for(int i = 0;i < arry.length;i++) {
+            //定义左边指针
+            int left = i+1;
+            //定义右边指针
+            int right = arry.length-1;
+            //条件为左右指针区域
+            while(left < right) {
+                //每次循环从当前循环的第一个数，第二个数和第三个数相加的和开始比较
+                int threeSum = arry[i]+arry[left]+arry[right];
+                if(Math.abs(threeSum-target) < Math.abs(closesSum-target) ) {//绝对值最接近就赋值
+                    closesSum = threeSum;
+                }
+                if(threeSum > target) {//当前循环中求和数比目标值大 左移右指针
+                    right--;
+                }else if(threeSum < target) {//当前循环中求和数比目标值小 右移左指针
+                    left++;
+                }else {//相等 直接返回即可
+                    return threeSum;
+                }
             }
         }
-        return ans;
+        //最终返回最接近的值
+        return closesSum;
     }
-
+    /**
+     * time:2021/3/16  18. 四数之和
+     给定一个包含 n 个整数的数组 nums 和一个目标值 target，判断 nums 中是否存在四个元素 a，b，c 和 d ，使得 a + b + c + d 的值与 target 相等？找出所有满足条件且不重复的四元组。
+     注意：答案中不可以包含重复的四元组。
+     来源：力扣（LeetCode）
+     链接：https://leetcode-cn.com/problems/4sum
+     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     时间复杂度o(n3) 空间复杂度0(1) 双指针+剪枝
+     */
+    public static List<List<Integer>> fourNumberSum(int[] arry,int target) {
+        //创建新数组存放满足的数据
+        List<List<Integer>> result = new ArrayList<>();
+        //排序
+        Arrays.sort(arry);
+        int len = arry.length;
+        if(len < 4) {
+            return result;
+        }
+        //第一个数的位置 开始为0 结束为 len-3(后面还有三个数)
+        for(int i = 0;i < len-3;i++) {
+            if(i > 1 && arry[i] == arry[i-1]) {//第一个数去重
+                continue;
+            }
+            //最小的值 如果最小的值都比目标值大 则直接结束
+            int min1 = arry[i]+arry[i+1]+arry[i+2]+arry[i+3];
+            if(min1 > target) {
+                break;
+            }
+            //当前循环中最大的值 如果这个值比目标值小 则说明本次循环没所有值只会更小 所以执行下次循环
+            int max1 = arry[i]+arry[len-1]+arry[len-2]+arry[len-3];
+            if(max1 < target) {
+                continue;
+            }
+            //定义第二个数的位置
+            for(int j = i+1;j < len-2;j++) {
+                if(j > i+1 && arry[j] == arry[j-1]) {//第二个数去重
+                    continue;
+                }
+                //定义左指针
+                int left = j+1;
+                //定义右指针
+                int right = len-1;
+                //相当于求三数之和 每次循环第一个数固定 后面三个数求和 再次判断第一个数固定，第二个数变化的本次循环中的最小值
+                //如果这个最小值(相当于三数求和)都比目标值大 直接结束
+                int min = arry[i]+arry[j]+arry[left]+arry[left+1];
+                if(min > target) {
+                    break;
+                }
+                //如果这个最大值(相当于三数求和)都比目标值小 跳过本次循环 让第二个数的下标++再次走到这里判断
+                int max = arry[i]+arry[j]+arry[right]+arry[right-1];
+                if(max < target) {
+                    continue;
+                }
+                //左右指针指针区域
+                while(left < right) {
+                    //求和
+                    int sum = arry[i]+arry[j]+arry[left]+arry[right];
+                    //判断 符合就放入
+                    if(sum == target) {
+                        result.add(Arrays.asList(arry[i],arry[j],arry[left],arry[right]));
+                        left++;
+                        while(left < right && arry[left] == arry[left-1]) {//左边再次去重
+                            left++;
+                        }
+                        right--;
+                        while(left < right && arry[right] == arry[right+1]) {//右边再次去重
+                            right--;
+                        }
+                    }else if(sum < target) {//左移右指针
+                        left++;
+                    }else {//右移左指针
+                        right--;
+                    }
+                }
+            }
+        }
+        return result;
+    }
 }
