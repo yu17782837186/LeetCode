@@ -75,7 +75,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-23" />
     <option name="y" value="3" />
     <option name="width" value="1940" />
@@ -219,12 +219,12 @@
       <workItem from="1615471062153" duration="876000" />
       <workItem from="1615643398904" duration="1185000" />
       <workItem from="1615801186350" duration="109000" />
-      <workItem from="1615880794327" duration="4325000" />
+      <workItem from="1615880794327" duration="4442000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30418000" />
+    <option name="totallyTimeSpent" value="30535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-23" y="3" width="1940" height="1067" extended-state="0" />
@@ -240,7 +240,7 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28871682" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28871682" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
