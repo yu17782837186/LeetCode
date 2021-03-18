@@ -30,7 +30,7 @@ public class ArrayLeetCode {
 
 //        System.out.println(containsNearbyDuplicate(new int[]{2,3,5,-1,6,7,6},2));
 
-//        System.out.println(maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
+        System.out.println(maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
 
         System.out.println(threeSumClosest(new int[]{-1,2,1,-4},1));
 
