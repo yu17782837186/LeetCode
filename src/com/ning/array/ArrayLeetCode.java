@@ -1,6 +1,7 @@
 package com.ning.array;
 
 import java.lang.reflect.Array;
+import java.net.Inet4Address;
 import java.util.*;
 
 public class ArrayLeetCode {
@@ -29,11 +30,13 @@ public class ArrayLeetCode {
 
 //        System.out.println(containsNearbyDuplicate(new int[]{2,3,5,-1,6,7,6},2));
 
-        System.out.println(maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
+//        System.out.println(maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
 
-        System.out.println(threeSumClosest(new int[]{-1,2,1,-4},1));
+//        System.out.println(threeSumClosest(new int[]{-1,2,1,-4},1));
 
-        System.out.println(fourNumberSum(new int[]{1,0,-1,0,-2,2},0));
+//        System.out.println(fourNumberSum(new int[]{1,0,-1,0,-2,2},0));
+
+        System.out.println(Arrays.toString(nextMaxSequence(new int[]{1,2,3})));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
@@ -434,7 +437,7 @@ public class ArrayLeetCode {
             if(min1 > target) {
                 break;
             }
-            //当前循环中最大的值 如果这个值比目标值小 则说明本次循环没所有值只会更小 所以执行下次循环
+            //当前循环中最大的值 如果这个值比目标值小 则说明本次循环中所有值只会更小 所以执行下次循环
             int max1 = arry[i]+arry[len-1]+arry[len-2]+arry[len-3];
             if(max1 < target) {
                 continue;
@@ -483,5 +486,45 @@ public class ArrayLeetCode {
             }
         }
         return result;
+    }
+    /**
+     * time:2021/3/18  31. 下一个排列
+     实现获取 下一个排列 的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。
+     如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。
+     必须 原地 修改，只允许使用额外常数空间。
+     来源：力扣（LeetCode）
+     链接：https://leetcode-cn.com/problems/next-permutation
+     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     * 时间复杂度o(n) 空间复杂度o(1)
+     */
+    public static int[] nextMaxSequence(int[] arry) {
+        //数组的前一位置 确保条件成立
+        int i = arry.length-2;
+        while(i >= 0 && arry[i] > arry[i+1]) {//从后向前找到第一个数比它后面的数要小的值作为交换的第一个数
+            i--;
+        }
+        if(i >= 0) {//如果大于等于0 说明找到了
+            int j = arry.length-1;
+            while(j >= 0 && arry[i] >= arry[j]) {//在找到了第一个数的前提下 去找到比第一个数要大的数作为交换的第二个数
+                j--;
+            }
+            swapPosition(arry,i,j);//交换值
+        }
+        int[] arrs = reversePosition(arry, i + 1, arry.length - 1);//交换位置
+        return arrs;
+    }
+    public static void swapPosition(int[] arr,int start,int end) {
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+    }
+    public static int[] reversePosition(int[] arr,int left,int right) {
+        List<List<Integer>> res = new ArrayList<>();
+        while(left < right) {
+            swapPosition(arr,left,right);
+            left++;
+            right--;
+        }
+        return arr;
     }
 }
