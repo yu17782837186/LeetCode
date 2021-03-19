@@ -169,7 +169,7 @@ public class ArrayLeetCode {
         int sum = 0;
         for(int i = 0;i < arry.length;i++) {
             //arry = [10,11,12] arry = [1,2]
-            //2 5 8 9 12 7 6 i=2时 左边有三种情况 取0个数 1个数 2个数即{8}，{8，5}，{8，5，2} 左边的情况就是i+1种情况
+            //2 5 8 9 12 7 6 i=2时 arrr[i] = 8 左边有三种情况 取0个数 1个数 2个数即{8}，{8，5}，{8，5，2} 左边的情况就是i+1种情况
             int left = i+1;
             //右边同理
             int right = arry.length-(i+1)+ 1;
