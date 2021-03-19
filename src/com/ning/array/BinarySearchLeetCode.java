@@ -7,7 +7,7 @@ public class BinarySearchLeetCode {
     public static void main(String[] args) {
         System.out.println(searchInsert(new int[]{1,3,5,6},2));
         System.out.println(sqrt(9));
-        System.out.println(newtonIterativeMethod(-1));
+        System.out.println(newtonIterativeMethod(55));
     }
     /**
      * time:2021/3/19 35. 搜索插入位置
