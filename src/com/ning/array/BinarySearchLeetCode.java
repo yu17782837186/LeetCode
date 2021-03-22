@@ -1,13 +1,17 @@
 package com.ning.array;
 
+import java.util.Arrays;
+
 /**
  * 二分查找
  */
 public class BinarySearchLeetCode {
     public static void main(String[] args) {
-        System.out.println(searchInsert(new int[]{1,3,5,6},2));
-        System.out.println(sqrt(9));
-        System.out.println(newtonIterativeMethod(55));
+//        System.out.println(searchInsert(new int[]{1,3,5,6},2));
+//        System.out.println(sqrt(9));
+//        System.out.println(newtonIterativeMethod(55));
+
+        System.out.println(Arrays.toString(twoNumberSum(new int[]{-1,0},-1)));
     }
     /**
      * time:2021/3/19 35. 搜索插入位置
@@ -74,5 +78,36 @@ public class BinarySearchLeetCode {
             x0 = xi;
         }
         return (int)x0;
+    }
+    /**
+     * time:2021/3/22 167. 两数之和 II - 输入有序数组
+     给定一个已按照 升序排列  的整数数组 numbers ，请你从数组中找出两个数满足相加之和等于目标数 target 。
+     函数应该以长度为 2 的整数数组的形式返回这两个数的下标值。numbers 的下标 从 1 开始计数 ，所以答案数组应当满足 1 <= answer[0] < answer[1] <= numbers.length 。
+     你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。
+     来源：力扣（LeetCode）
+     链接：https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted
+     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     * 时间复杂度为每次一半o(logn) 空间复杂度o(1)
+     */
+    public static int[] twoNumberSum(int[] arry,int target){
+        for(int i = 0;i < arry.length;i++) {
+            //每次区间范围都是从第一个固定数以后的所有长度
+            int low = i+1;
+            int heigh = arry.length-1;
+            //第二个数的范围
+            while(low <= heigh) {
+                //折半
+                int mid = (low+heigh)>>1;
+                if(arry[mid] == target-arry[i]) {
+                    return new int[]{i+1,mid+1};
+                }else if(arry[mid] < target-arry[i]) {
+                    low = mid+1;
+                }else {
+                    heigh = mid-1;
+                }
+            }
+        }
+        //没有返回-1
+        return new int[]{-1,-1};
     }
 }
