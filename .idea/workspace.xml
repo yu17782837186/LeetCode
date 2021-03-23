@@ -28,7 +28,7 @@
       <file leaf-file-name="ArrayLeetCode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
+            <state relative-caret-position="5402">
               <caret line="148" column="32" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="32" />
             </state>
           </provider>
@@ -37,8 +37,8 @@
       <file leaf-file-name="BinarySearchLeetCode.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ning/array/BinarySearchLeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            <state relative-caret-position="370">
+              <caret line="151" column="25" selection-start-line="151" selection-start-column="25" selection-end-line="151" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -98,6 +98,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -116,11 +117,17 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="array" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="array" type="462c0819:PsiDirectoryNode" />
+              <item name="BinarySearchLeetCode" type="1a9f42e2:ClassTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
@@ -251,12 +258,13 @@
       <workItem from="1615951246297" duration="2196000" />
       <workItem from="1616077656668" duration="1892000" />
       <workItem from="1616122822029" duration="10196000" />
-      <workItem from="1616424134578" duration="672000" />
+      <workItem from="1616424134578" duration="846000" />
+      <workItem from="1616487584739" duration="3616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45491000" />
+    <option name="totallyTimeSpent" value="49281000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-15" y="1" width="1940" height="1067" extended-state="0" />
@@ -271,19 +279,19 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17809735" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22013274" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21223404" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2143617" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.45912653" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -304,6 +312,23 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Leetcode.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5402">
+          <caret line="148" column="32" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ning/array/BinarySearchLeetCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Leetcode.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -469,15 +494,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
+        <state relative-caret-position="5402">
           <caret line="148" column="32" selection-start-line="148" selection-start-column="18" selection-end-line="148" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ning/array/BinarySearchLeetCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        <state relative-caret-position="370">
+          <caret line="151" column="25" selection-start-line="151" selection-start-column="25" selection-end-line="151" selection-end-column="25" />
         </state>
       </provider>
     </entry>

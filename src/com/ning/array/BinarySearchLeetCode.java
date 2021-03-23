@@ -11,7 +11,10 @@ public class BinarySearchLeetCode {
 //        System.out.println(sqrt(9));
 //        System.out.println(newtonIterativeMethod(55));
 
-        System.out.println(Arrays.toString(twoNumberSum(new int[]{-1,0},-1)));
+//        System.out.println(Arrays.toString(twoNumberSum(new int[]{-1,0},-1)));
+
+        System.out.println(Arrays.toString(intersectin(new int[]{1,2,2,1},new int[]{2,2})));
+        System.out.println(Arrays.toString(intersectin(new int[]{4,9,5},new int[]{9,4,9,8,4})));
     }
     /**
      * time:2021/3/19 35. 搜索插入位置
@@ -109,5 +112,81 @@ public class BinarySearchLeetCode {
         }
         //没有返回-1
         return new int[]{-1,-1};
+    }
+    /**
+     * time:2021/3/23  278. 第一个错误的版本
+     你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。
+     假设你有 n 个版本 [1, 2, ..., n]，你想找出导致之后所有版本出错的第一个错误的版本。
+     你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version 是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。
+     来源：力扣（LeetCode）
+     链接：https://leetcode-cn.com/problems/first-bad-version
+     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     * 时间复杂度为每次一半o(logn) 空间复杂度o(1)
+     */
+    public static int firstVersion(int n) {
+        int left = 1;
+        int right = n;
+        while(left < right) {
+            int mid = left+(right-left)/2;
+            if(isBadVersion(mid)) {
+                right = mid;
+            }else {
+                left = mid+1;
+            }
+        }
+        return left;
+    }
+    public static boolean isBadVersion(int i) {
+        if(i == 6) {
+            return false;
+        }
+        return true;
+    }
+    /**
+     * time:2021/3/23  349. 两个数组的交集
+     给定两个数组，编写一个函数来计算它们的交集。
+     说明：
+     输出结果中的每个元素一定是唯一的。
+     我们可以不考虑输出结果的顺序。
+     * 双指针+排序
+     * 时间复杂度：O(mlogm+nlogn)，其中 m和n分别是两个数组的长度。对两个数组排序的时间复杂度分别是O(mlogm)和O(nlogn)，双指针寻找交集元素的时间复杂度是O(m+n)，因此总时间复杂度是O(mlogm+nlogn)。
+     *
+     * 空间复杂度：O(logm+logn)，其中m和n分别是两个数组的长度。空间复杂度主要取决于排序使用的额外空间。
+     */
+    public static int[] intersectin(int[] num1,int[] num2) {
+        //给两个数组排序
+        Arrays.sort(num1);
+        Arrays.sort(num2);
+        //两个数组的长度
+        int length1 = num1.length;
+        int length2 = num2.length;
+        //定义一个新的数组存放相同的数据
+        int[] newData = new int[length1+length2];
+        //新数组的下标
+        int index = 0;
+        //数组1的下标
+        int index1 = 0;
+        //数组2的下标
+        int index2 = 0;
+        //数组1 数组2内部一起遍历
+        while(index1 < length1 && index2 < length2) {
+            //拿出两个数组的各个位置的数
+            int numFirst = num1[index1];
+            int numSecond = num2[index2];
+            //相等存放新数组
+            if(numFirst == numSecond) {
+                if(index == 0 || newData[index-1] != numFirst) {//新数组里面去重
+                    newData[index++] = numFirst;
+                }
+                //移动下标
+                index1++;
+                index2++;
+            }else if(numFirst < numSecond) {
+                index1++;
+            }else {
+                index2++;
+            }
+        }
+        return Arrays.copyOfRange(newData,0,index);
     }
 }
