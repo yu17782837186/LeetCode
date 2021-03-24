@@ -30,13 +30,15 @@ public class ArrayLeetCode {
 
 //        System.out.println(containsNearbyDuplicate(new int[]{2,3,5,-1,6,7,6},2));
 
-        System.out.println(maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
+//        System.out.println(maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
+//
+//        System.out.println(threeSumClosest(new int[]{-1,2,1,-4},1));
+//
+//        System.out.println(fourNumberSum(new int[]{1,0,-1,0,-2,2},0));
+//
+//        System.out.println(Arrays.toString(nextMaxSequence(new int[]{1,2,3})));
 
-        System.out.println(threeSumClosest(new int[]{-1,2,1,-4},1));
-
-        System.out.println(fourNumberSum(new int[]{1,0,-1,0,-2,2},0));
-
-        System.out.println(Arrays.toString(nextMaxSequence(new int[]{1,2,3})));
+        System.out.println(search(new int[]{4,5,6,7,0,1,2},3));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
@@ -285,9 +287,6 @@ public class ArrayLeetCode {
     /**
      * time:2021/3/10 219. 存在重复元素 II
      * 给定一个整数数组和一个整数 k，判断数组中是否存在两个不同的索引 i 和 j，使得 nums [i] = nums [j]，并且 i 和 j 的差的 绝对值 至多为 k
-     * 来源：力扣（LeetCode）
-     * 链接：https://leetcode-cn.com/problems/contains-duplicate-ii
-     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      * 时间复杂度o(n2) 空间复杂度o(1)
      */
     public static boolean containsNearbyDuplicate(int[] arry,int k) {
@@ -304,9 +303,6 @@ public class ArrayLeetCode {
      * time:2021/3/11  11. 盛最多水的容器
      给你 n 个非负整数 a1，a2，...，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0) 。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。
      说明：你不能倾斜容器。
-     来源：力扣（LeetCode）
-     链接：https://leetcode-cn.com/problems/container-with-most-water
-     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      时间复杂度o(n) 空间复杂度o(1)
      */
     public static int maxArea(int[] arry) {
@@ -333,9 +329,6 @@ public class ArrayLeetCode {
      * time:2021/3/13  15. 三数之和
      给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
      注意：答案中不可以包含重复的三元组。
-     来源：力扣（LeetCode）
-     链接：https://leetcode-cn.com/problems/3sum
-     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      时间复杂度o(n2) 空间复杂度o(1)
      */
     public static List<List<Integer>> threeSum(int[] nums) {
@@ -413,9 +406,6 @@ public class ArrayLeetCode {
      * time:2021/3/16  18. 四数之和
      给定一个包含 n 个整数的数组 nums 和一个目标值 target，判断 nums 中是否存在四个元素 a，b，c 和 d ，使得 a + b + c + d 的值与 target 相等？找出所有满足条件且不重复的四元组。
      注意：答案中不可以包含重复的四元组。
-     来源：力扣（LeetCode）
-     链接：https://leetcode-cn.com/problems/4sum
-     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      时间复杂度o(n3) 空间复杂度0(1) 双指针+剪枝
      */
     public static List<List<Integer>> fourNumberSum(int[] arry,int target) {
@@ -492,9 +482,6 @@ public class ArrayLeetCode {
      实现获取 下一个排列 的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。
      如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。
      必须 原地 修改，只允许使用额外常数空间。
-     来源：力扣（LeetCode）
-     链接：https://leetcode-cn.com/problems/next-permutation
-     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      * 时间复杂度o(n) 空间复杂度o(1)
      */
     public static int[] nextMaxSequence(int[] arry) {
@@ -519,12 +506,45 @@ public class ArrayLeetCode {
         arr[end] = temp;
     }
     public static int[] reversePosition(int[] arr,int left,int right) {
-        List<List<Integer>> res = new ArrayList<>();
         while(left < right) {
             swapPosition(arr,left,right);
             left++;
             right--;
         }
         return arr;
+    }
+    /**
+     * time:2021/3/24  33. 搜索旋转排序数组(数组题用二分查找)
+     整数数组 nums 按升序排列，数组中的值 互不相同 。
+     在传递给函数之前，nums 在预先未知的某个下标 k（0 <= k < nums.length）上进行了 旋转，使数组变为 [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]（下标 从 0 开始 计数）。例如， [0,1,2,4,5,6,7] 在下标 3 处经旋转后可能变为 [4,5,6,7,0,1,2] 。
+     给你 旋转后 的数组 nums 和一个整数 target ，如果 nums 中存在这个目标值 target ，则返回它的索引，否则返回 -1 。
+     * 时间复杂度o(logn) 空间复杂度o(1)
+     */
+    public static int search(int[] arry,int target) {
+        if(arry == null || arry.length == 0) {
+           return -1;
+        }
+        int left = 0;
+        int right = arry.length-1;
+        while(left <= right) {
+            int mid = left+(right-left)/2;//折半
+            if(target == arry[mid]) {//相等直接返回
+                return mid;
+            }
+            if(arry[left] <= arry[mid]) {//左边有序
+                if(target >= arry[left] && target < arry[mid]) {//target目标值在左侧
+                    right = mid-1;
+                }else {//target目标值在右侧
+                    left = mid+1;
+                }
+            }else {//右边有序
+                if(target <= arry[right] && target > arry[mid]) {//target目标值在右侧
+                    left = mid+1;
+                }else {//target目标值在左侧
+                    right = mid-1;
+                }
+            }
+        }
+        return -1;
     }
 }

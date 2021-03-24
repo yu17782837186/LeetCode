@@ -1,6 +1,8 @@
 package com.ning.array;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 二分查找
@@ -13,8 +15,11 @@ public class BinarySearchLeetCode {
 
 //        System.out.println(Arrays.toString(twoNumberSum(new int[]{-1,0},-1)));
 
-        System.out.println(Arrays.toString(intersectin(new int[]{1,2,2,1},new int[]{2,2})));
-        System.out.println(Arrays.toString(intersectin(new int[]{4,9,5},new int[]{9,4,9,8,4})));
+//        System.out.println(Arrays.toString(intersectin(new int[]{1,2,2,1},new int[]{2,2})));
+//        System.out.println(Arrays.toString(intersectin(new int[]{4,9,5},new int[]{9,4,9,8,4})));
+
+        System.out.println(Arrays.toString(intersectionChangeWay1(new int[]{4,9,5},new int[]{9,4,9,8,4})));
+        System.out.println(Arrays.toString(intersectionChangeWay2(new int[]{1,2,2,1},new int[]{2,2})));
     }
     /**
      * time:2021/3/19 35. 搜索插入位置
@@ -43,9 +48,6 @@ public class BinarySearchLeetCode {
      实现 int sqrt(int x) 函数。
      计算并返回 x 的平方根，其中 x 是非负整数。
      由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。
-     来源：力扣（LeetCode）
-     链接：https://leetcode-cn.com/problems/sqrtx
-     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      * 时间复杂度为每次一半o(logn) 空间复杂度o(1)
      */
     //方法一(折半)
@@ -87,9 +89,6 @@ public class BinarySearchLeetCode {
      给定一个已按照 升序排列  的整数数组 numbers ，请你从数组中找出两个数满足相加之和等于目标数 target 。
      函数应该以长度为 2 的整数数组的形式返回这两个数的下标值。numbers 的下标 从 1 开始计数 ，所以答案数组应当满足 1 <= answer[0] < answer[1] <= numbers.length 。
      你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。
-     来源：力扣（LeetCode）
-     链接：https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted
-     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      * 时间复杂度为每次一半o(logn) 空间复杂度o(1)
      */
     public static int[] twoNumberSum(int[] arry,int target){
@@ -118,9 +117,6 @@ public class BinarySearchLeetCode {
      你是产品经理，目前正在带领一个团队开发新的产品。不幸的是，你的产品的最新版本没有通过质量检测。由于每个版本都是基于之前的版本开发的，所以错误的版本之后的所有版本都是错的。
      假设你有 n 个版本 [1, 2, ..., n]，你想找出导致之后所有版本出错的第一个错误的版本。
      你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version 是否在单元测试中出错。实现一个函数来查找第一个错误的版本。你应该尽量减少对调用 API 的次数。
-     来源：力扣（LeetCode）
-     链接：https://leetcode-cn.com/problems/first-bad-version
-     著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
      * 时间复杂度为每次一半o(logn) 空间复杂度o(1)
      */
     public static int firstVersion(int n) {
@@ -150,8 +146,7 @@ public class BinarySearchLeetCode {
      我们可以不考虑输出结果的顺序。
      * 双指针+排序
      * 时间复杂度：O(mlogm+nlogn)，其中 m和n分别是两个数组的长度。对两个数组排序的时间复杂度分别是O(mlogm)和O(nlogn)，双指针寻找交集元素的时间复杂度是O(m+n)，因此总时间复杂度是O(mlogm+nlogn)。
-     *
-     * 空间复杂度：O(logm+logn)，其中m和n分别是两个数组的长度。空间复杂度主要取决于排序使用的额外空间。
+     * 空间复杂度：O(m+n)，其中m和n分别是两个数组的长度。
      */
     public static int[] intersectin(int[] num1,int[] num2) {
         //给两个数组排序
@@ -188,5 +183,64 @@ public class BinarySearchLeetCode {
             }
         }
         return Arrays.copyOfRange(newData,0,index);
+    }
+    /**
+     * time:2021/3/24  350. 两个数组的交集 II
+     给定两个数组，编写一个函数来计算它们的交集。
+     说明：
+     输出结果中每个元素出现的次数，应与元素在两个数组中出现次数的最小值一致。
+     我们可以不考虑输出结果的顺序。
+     * 双指针+排序
+     * 时间复杂度：O(mlogm+nlogn)，其中 m和n分别是两个数组的长度。对两个数组排序的时间复杂度分别是O(mlogm)和O(nlogn)，双指针寻找交集元素的时间复杂度是O(m+n)，因此总时间复杂度是O(mlogm+nlogn)。
+     * 空间复杂度：O(Min(m,n))，其中m和n分别是两个数组的长度
+     */
+    //方法(1) 双指针+排序
+    public static int[] intersectionChangeWay1(int[] num1,int[] num2) {
+        Arrays.sort(num1);
+        Arrays.sort(num2);
+        int length1 = num1.length;
+        int length2 = num2.length;
+        int[] intersection = new int[Math.min(length1,length2)];
+        int index = 0;
+        int index1 = 0;
+        int index2 = 0;
+        while(index1 < length1 && index2 < length2) {
+            int firstArr = num1[index1];
+            int secondArr = num2[index2];
+            if(firstArr == secondArr) {
+                intersection[index++] = firstArr;
+                index1++;
+                index2++;
+            }else if(firstArr < secondArr) {
+                index1++;
+            }else {
+                index2++;
+            }
+        }
+        return Arrays.copyOfRange(intersection,0,index);
+    }
+    //方法(2)哈希表 时间复杂度o(m+n) m和n是两个数组的长度 哈希表操作的时间复杂度是o(1) 空间复杂度o(min(m,n)) m.n为两个数组的长度
+    public static int[] intersectionChangeWay2(int[] num1,int[] num2) {
+        if(num1.length > num2.length) {//将num1定为数组长度较小的那一个数组
+            return intersectionChangeWay2(num2, num1);
+        }
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int num : num1) {//遍历数组长度较小的数组num1
+            if(map.containsKey(num)) {//如果重复 记录重复的次数
+                map.put(num,map.get(num)+1);
+            }else {
+                map.put(num,1);
+            }
+        }
+        //创建新数组
+        int[] intersection = new int[num1.length];
+        int j = 0;
+        for(int num : num2) {//遍历数组长度较大的数组
+            if(map.containsKey(num) && map.get(num) > 0) {//map.get(num)确保能拿到出现次数较小的那一个数
+                map.put(num,map.get(num)-1);//在较长数组中比较 重复出现的话 让它的次数减一，并且放在新数组中去
+                intersection[j++] = num;
+            }
+        }
+        return Arrays.copyOfRange(intersection,0,j);
     }
 }
