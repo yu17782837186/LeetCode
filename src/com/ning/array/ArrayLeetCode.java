@@ -38,7 +38,9 @@ public class ArrayLeetCode {
 //
 //        System.out.println(Arrays.toString(nextMaxSequence(new int[]{1,2,3})));
 
-        System.out.println(search(new int[]{4,5,6,7,0,1,2},3));
+//        System.out.println(search(new int[]{4,5,6,7,0,1,2},3));
+
+        System.out.println(Arrays.toString(searchRange(new int[]{1,3},1)));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
@@ -546,5 +548,35 @@ public class ArrayLeetCode {
             }
         }
         return -1;
+    }
+    /**
+     time:2021/3/25  34. 在排序数组中查找元素的第一个和最后一个位置
+     给定一个按照升序排列的整数数组 nums，和一个目标值 target。找出给定目标值在数组中的开始位置和结束位置。
+     如果数组中不存在目标值 target，返回 [-1, -1]。
+     哈希表：时间复杂度o(n2) 空间复杂度o(1)
+     */
+    public static int[] searchRange(int[] arry,int target) {//5,7,7,8,8,10 //1,3
+        Arrays.sort(arry);
+        int count = 0;
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int i = 0;i < arry.length;i++) {
+            if(map.containsKey(target) && arry[i] == target) {//包含target并且arr[i]==target 放进map中
+                map.put(target,i);
+                count++;//记录重复的次数
+            }else {
+                map.put(arry[i],i);
+            }
+        }
+        if(count == 0) {//没有重复的数
+            for(Integer key :map.keySet()) {
+                if(key == target) {//判断每个数是否有跟target相同的 有直接return结果
+                    return new int[]{map.get(key),map.get(key)};
+                }
+            }
+            //没有返回-1
+            return new int[]{-1,-1};
+        }
+        //有重复的数 返回对应的下标
+        return new int[]{map.get(target)-count,map.get(target)};
     }
 }
