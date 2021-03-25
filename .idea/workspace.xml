@@ -42,8 +42,8 @@
       <file leaf-file-name="ArrayLeetCode.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="555" column="9" selection-start-line="555" selection-start-column="9" selection-end-line="555" selection-end-column="9" />
+            <state relative-caret-position="353">
+              <caret line="559" column="22" lean-forward="true" selection-start-line="559" selection-start-column="22" selection-end-line="559" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -289,12 +289,12 @@
       <workItem from="1616487584739" duration="3992000" />
       <workItem from="1616566899451" duration="5849000" />
       <workItem from="1616642632757" duration="2399000" />
-      <workItem from="1616658463252" duration="3075000" />
+      <workItem from="1616658463252" duration="3428000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60980000" />
+    <option name="totallyTimeSpent" value="61333000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-17" y="12" width="1940" height="1067" extended-state="0" />
@@ -309,12 +309,12 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.123893805" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25221238" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.2090708" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32964602" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11595745" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17606384" />
       <window_info anchor="right" id="Database" order="3" weight="0.32978722" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -606,8 +606,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="555" column="9" selection-start-line="555" selection-start-column="9" selection-end-line="555" selection-end-column="9" />
+        <state relative-caret-position="353">
+          <caret line="559" column="22" lean-forward="true" selection-start-line="559" selection-start-column="22" selection-end-line="559" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
