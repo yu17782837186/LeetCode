@@ -553,10 +553,13 @@ public class ArrayLeetCode {
      time:2021/3/25  34. 在排序数组中查找元素的第一个和最后一个位置
      给定一个按照升序排列的整数数组 nums，和一个目标值 target。找出给定目标值在数组中的开始位置和结束位置。
      如果数组中不存在目标值 target，返回 [-1, -1]。
-     哈希表：时间复杂度o(n2) 空间复杂度o(1)
+     哈希表：时间复杂度o(n+m) 空间复杂度o(1)
      */
     public static int[] searchRange(int[] arry,int target) {//5,7,7,8,8,10 //1,3
-        Arrays.sort(arry);
+        // Arrays.sort(nums);
+        // if(nums.length == 1 && nums[0] == target) {
+        //     return new int[]{0,0};
+        // }
         int count = 0;
         Map<Integer,Integer> map = new HashMap<>();
         for(int i = 0;i < arry.length;i++) {
