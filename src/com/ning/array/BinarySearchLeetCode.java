@@ -224,6 +224,7 @@ public class BinarySearchLeetCode {
         if(num1.length > num2.length) {//将num1定为数组长度较小的那一个数组
             return intersectionChangeWay2(num2, num1);
         }
+
         Map<Integer,Integer> map = new HashMap<>();
         for(int num : num1) {//遍历数组长度较小的数组num1
             if(map.containsKey(num)) {//如果重复 记录重复的次数
@@ -232,6 +233,7 @@ public class BinarySearchLeetCode {
                 map.put(num,1);
             }
         }
+
         //创建新数组
         int[] intersection = new int[num1.length];
         int j = 0;
