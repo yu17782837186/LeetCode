@@ -40,7 +40,8 @@ public class ArrayLeetCode {
 
 //        System.out.println(search(new int[]{4,5,6,7,0,1,2},3));
 
-        System.out.println(Arrays.toString(searchRange(new int[]{1,3},1)));
+//        System.out.println(Arrays.toString(searchRangeByHash(new int[]{1,3},1)));
+        System.out.println(Arrays.toString(searchRangeByBinary(new int[]{1,3},1)));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
@@ -555,7 +556,8 @@ public class ArrayLeetCode {
      如果数组中不存在目标值 target，返回 [-1, -1]。
      哈希表：时间复杂度o(n+m) 空间复杂度o(1)
      */
-    public static int[] searchRange(int[] arry,int target) {//5,7,7,8,8,10 //1,3
+    //方法(1)
+    public static int[] searchRangeByHash(int[] arry,int target) {//5,7,7,8,8,10 //1,3
         // Arrays.sort(nums);
         // if(nums.length == 1 && nums[0] == target) {
         //     return new int[]{0,0};
@@ -581,5 +583,35 @@ public class ArrayLeetCode {
         }
         //有重复的数 返回对应的下标
         return new int[]{map.get(target)-count,map.get(target)};
+    }
+    /**
+     time:2021/3/26  34. 在排序数组中查找元素的第一个和最后一个位置
+     给定一个按照升序排列的整数数组 nums，和一个目标值 target。找出给定目标值在数组中的开始位置和结束位置。
+     如果数组中不存在目标值 target，返回 [-1, -1]。
+     二分查找：时间复杂度o(logn) 空间复杂度o(1)
+     */
+    //方法(2) 二分查找
+    public static int[] searchRangeByBinary(int[] arry,int target) {
+        int leftFirst = binarySearch(arry,target,true); //左边找第一个
+        int rightLast = binarySearch(arry,target,false)-1;//右边找最后一个 需要减一 减一是因为它永远取不到相等的时候 所以最后一次出现的位置一定是目标值的下一个位置
+        if(leftFirst <= rightLast && arry[leftFirst] == target && arry[rightLast] == target) {
+            return new int[]{leftFirst,rightLast};
+        }
+        return new int[]{-1,-1};
+    }
+    public static int binarySearch(int[] arr,int target,boolean flag) {
+        int left = 0;
+        int right = arr.length-1;
+        int result = arr.length;
+        while(left <= right) {
+            int mid = left+(right-left)/2;
+            if(arr[mid] > target || (flag && arr[mid] >= target)) {
+                right = mid-1;
+                result = mid;
+            }else {
+                left = mid+1;
+            }
+        }
+        return result;
     }
 }

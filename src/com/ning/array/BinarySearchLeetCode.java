@@ -21,7 +21,6 @@ public class BinarySearchLeetCode {
 //        System.out.println(Arrays.toString(intersectionChangeWay1(new int[]{4,9,5},new int[]{9,4,9,8,4})));
 //        System.out.println(Arrays.toString(intersectionChangeWay2(new int[]{1,2,2,1},new int[]{2,2})));
 
-        System.out.println(Arrays.toString(searchRange(new int[]{1,3},1)));
     }
     /**
      * time:2021/3/19 35. 搜索插入位置
@@ -246,32 +245,5 @@ public class BinarySearchLeetCode {
             }
         }
         return Arrays.copyOfRange(intersection,0,j);
-    }
-    public static int[] searchRange(int[] arry,int target) {//5,7,7,8,8,10 //1,3
-        // Arrays.sort(nums);
-        // if(nums.length == 1 && nums[0] == target) {
-        //     return new int[]{0,0};
-        // }
-        int count = 0;
-        Map<Integer,Integer> map = new HashMap<>();
-        for(int i = 0;i < arry.length;i++) {
-            if(map.containsKey(target) && arry[i] == target) {//包含target并且arr[i]==target 放进map中
-                map.put(target,i);
-                count++;//记录重复的次数
-            }else {
-                map.put(arry[i],i);
-            }
-        }
-        if(count == 0) {//没有重复的数
-            for(Integer key :map.keySet()) {
-                if(key == target) {//判断每个数是否有跟target相同的 有直接return结果
-                    return new int[]{map.get(key),map.get(key)};
-                }
-            }
-            //没有返回-1
-            return new int[]{-1,-1};
-        }
-        //有重复的数 返回对应的下标
-        return new int[]{map.get(target)-count,map.get(target)};
     }
 }
