@@ -41,7 +41,10 @@ public class ArrayLeetCode {
 //        System.out.println(search(new int[]{4,5,6,7,0,1,2},3));
 
 //        System.out.println(Arrays.toString(searchRangeByHash(new int[]{1,3},1)));
-        System.out.println(Arrays.toString(searchRangeByBinary(new int[]{1,3},1)));
+//        System.out.println(Arrays.toString(searchRangeByBinary(new int[]{1,3},1)));
+
+        List<List<Integer>> lists = combineSum(new int[]{2, 3, 6, 7}, 7);
+        System.out.println(Arrays.asList(lists));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
@@ -613,5 +616,41 @@ public class ArrayLeetCode {
             }
         }
         return result;
+    }
+    /**
+     time:2021/3/29  39. 组合总和
+     给定一个无重复元素的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
+     candidates 中的数字可以无限制重复被选取。
+     说明：
+     所有数字（包括 target）都是正整数。
+     解集不能包含重复的组合。
+     回朔：时间复杂度o(n) 空间复杂度o(target) n为所有可行解的长度和 target为最差需要递归的层数
+     */
+    public static List<List<Integer>> combineSum(int[] arry,int target) {
+        //返回最终的数组
+        List<List<Integer>> result = new ArrayList<>();
+        //存储符合条件的数
+        List<Integer> newArr = new ArrayList<>();
+        rescursion(arry,target,result,newArr,0);
+        return result;
+    }
+    private static void rescursion(int[] originArr, int changeTarget, List<List<Integer>> res, List<Integer> newArr, int index) {
+        if(index == originArr.length) {//等于数组长度递归结束
+            return;
+        }
+        if(changeTarget == 0) {//变化的目标值等于0的时候 将newArr放进res中返回
+            res.add(new ArrayList<>(newArr));
+            return;
+        }
+        //从头到尾每个数递归
+        rescursion(originArr,changeTarget,res,newArr,index+1);
+        if(changeTarget-originArr[index] >= 0) {//类似深度优先遍历 一条道走到黑 当结果<0时 为结束条件
+            //把每个数放到新数组中保存
+            newArr.add(originArr[index]);
+            //再次递归只改变目标数 此次递归只针对当前深度优先遍历 所以最开始的位置还是index 只改变的是每次目标节点数值
+            rescursion(originArr,changeTarget-originArr[index],res,newArr,index);
+            //除去最后一个位置是防止它的最后一个满足条件的数进来以后<0
+            newArr.remove(newArr.size()-1);
+        }
     }
 }
