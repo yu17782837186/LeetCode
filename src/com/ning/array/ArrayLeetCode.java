@@ -43,8 +43,10 @@ public class ArrayLeetCode {
 //        System.out.println(Arrays.toString(searchRangeByHash(new int[]{1,3},1)));
 //        System.out.println(Arrays.toString(searchRangeByBinary(new int[]{1,3},1)));
 
-        List<List<Integer>> lists = combineSum(new int[]{2, 3, 6, 7}, 7);
-        System.out.println(Arrays.asList(lists));
+//        List<List<Integer>> lists = combineSum(new int[]{2, 3, 6, 7}, 7);
+//        System.out.println(Arrays.asList(lists));
+
+        System.out.println(summaryRanges(new int[]{0,1,2,4,5,7}));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
@@ -117,8 +119,8 @@ public class ArrayLeetCode {
         return value;
     }
     /**
-     * time:2021/3/6 (977)有序数组的平方
-     * 给你一个按非递减顺序排序的整数数组 nums，返回每个数字的平方组成的新数组，要求也按非递减顺序排序。
+     time:2021/3/6 (977)有序数组的平方
+     给你一个按非递减顺序排序的整数数组 nums，返回每个数字的平方组成的新数组，要求也按非递减顺序排序。
      */
     //(1)暴力解法
     public static int[] orderArraySort(int[] arry) {
@@ -167,11 +169,11 @@ public class ArrayLeetCode {
         return newArray;
     }
     /**
-     * time:2021/3/7 (1588)所有奇数长度子数组的和
-     * 给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。
-     * 子数组 定义为原数组中的一个连续子序列。
-     * 请你返回 arr 中 所有奇数长度子数组的和 。
-     * 时间复杂度o(n) 空间复杂度o(1)
+     time:2021/3/7 (1588)所有奇数长度子数组的和
+     给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。
+     子数组 定义为原数组中的一个连续子序列。
+     请你返回 arr 中 所有奇数长度子数组的和 。
+     时间复杂度o(n) 空间复杂度o(1)
      */
     public static int sumOddSubArrays(int[] arry) {
         int sum = 0;
@@ -195,9 +197,9 @@ public class ArrayLeetCode {
         return sum;
     }
     /**
-     * time:2021/3/8 (628) 三个数的最大乘积
-     * 给你一个整型数组 nums ，在数组中找出由三个数组成的最大乘积，并输出这个乘积。
-     * 时间复杂度o(nlogn) 空间复杂度o(logn)
+     time:2021/3/8 (628) 三个数的最大乘积
+     给你一个整型数组 nums ，在数组中找出由三个数组成的最大乘积，并输出这个乘积。
+     时间复杂度o(nlogn) 空间复杂度o(logn)
      */
     //(1)排序解法
     public static int maxMultiply(int[] arry) {
@@ -235,9 +237,9 @@ public class ArrayLeetCode {
         return Math.max(min1 * min2 * max1,max1 * max2 *max3);
     }
     /**
-     * time:2021/3/9 (1550)存在连续三个奇数的数组
-     * 给你一个整数数组 arr，请你判断数组中是否存在连续三个元素都是奇数的情况：如果存在，请返回 true ；否则，返回 false 。
-     * 时间复杂度o(n) 空间复杂度o(1)
+     time:2021/3/9 (1550)存在连续三个奇数的数组
+     给你一个整数数组 arr，请你判断数组中是否存在连续三个元素都是奇数的情况：如果存在，请返回 true ；否则，返回 false 。
+     时间复杂度o(n) 空间复杂度o(1)
      */
     //(1)遍历数组
     public static boolean isThreeOddArrays(int[] arry) {
@@ -291,9 +293,9 @@ public class ArrayLeetCode {
         return false;
     }
     /**
-     * time:2021/3/10 219. 存在重复元素 II
-     * 给定一个整数数组和一个整数 k，判断数组中是否存在两个不同的索引 i 和 j，使得 nums [i] = nums [j]，并且 i 和 j 的差的 绝对值 至多为 k
-     * 时间复杂度o(n2) 空间复杂度o(1)
+     time:2021/3/10 219. 存在重复元素 II
+     给定一个整数数组和一个整数 k，判断数组中是否存在两个不同的索引 i 和 j，使得 nums [i] = nums [j]，并且 i 和 j 的差的 绝对值 至多为 k
+     时间复杂度o(n2) 空间复杂度o(1)
      */
     public static boolean containsNearbyDuplicate(int[] arry,int k) {
         for(int i = 0;i < arry.length;i++) {
@@ -306,7 +308,7 @@ public class ArrayLeetCode {
         return false;
     }
     /**
-     * time:2021/3/11  11. 盛最多水的容器
+     time:2021/3/11  11. 盛最多水的容器
      给你 n 个非负整数 a1，a2，...，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0) 。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。
      说明：你不能倾斜容器。
      时间复杂度o(n) 空间复杂度o(1)
@@ -332,7 +334,7 @@ public class ArrayLeetCode {
         return area;
     }
     /**
-     * time:2021/3/13  15. 三数之和
+     time:2021/3/13  15. 三数之和
      给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
      注意：答案中不可以包含重复的三元组。
      时间复杂度o(n2) 空间复杂度o(1)
@@ -375,7 +377,7 @@ public class ArrayLeetCode {
         return result;
     }
     /**
-     * time:2021/3/15  16. 最接近的三数之和
+     time:2021/3/15  16. 最接近的三数之和
      给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。
      时间复杂度o(n2) 空间复杂度o(1)
      */
@@ -409,7 +411,7 @@ public class ArrayLeetCode {
         return closesSum;
     }
     /**
-     * time:2021/3/16  18. 四数之和
+     time:2021/3/16  18. 四数之和
      给定一个包含 n 个整数的数组 nums 和一个目标值 target，判断 nums 中是否存在四个元素 a，b，c 和 d ，使得 a + b + c + d 的值与 target 相等？找出所有满足条件且不重复的四元组。
      注意：答案中不可以包含重复的四元组。
      时间复杂度o(n3) 空间复杂度0(1) 双指针+剪枝
@@ -484,11 +486,11 @@ public class ArrayLeetCode {
         return result;
     }
     /**
-     * time:2021/3/18  31. 下一个排列
+     time:2021/3/18  31. 下一个排列
      实现获取 下一个排列 的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。
      如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。
      必须 原地 修改，只允许使用额外常数空间。
-     * 时间复杂度o(n) 空间复杂度o(1)
+     时间复杂度o(n) 空间复杂度o(1)
      */
     public static int[] nextMaxSequence(int[] arry) {
         //数组的前一位置 确保条件成立
@@ -520,11 +522,11 @@ public class ArrayLeetCode {
         return arr;
     }
     /**
-     * time:2021/3/24  33. 搜索旋转排序数组(数组题用二分查找)
+     time:2021/3/24  33. 搜索旋转排序数组(数组题用二分查找)
      整数数组 nums 按升序排列，数组中的值 互不相同 。
      在传递给函数之前，nums 在预先未知的某个下标 k（0 <= k < nums.length）上进行了 旋转，使数组变为 [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]]（下标 从 0 开始 计数）。例如， [0,1,2,4,5,6,7] 在下标 3 处经旋转后可能变为 [4,5,6,7,0,1,2] 。
      给你 旋转后 的数组 nums 和一个整数 target ，如果 nums 中存在这个目标值 target ，则返回它的索引，否则返回 -1 。
-     * 时间复杂度o(logn) 空间复杂度o(1)
+     时间复杂度o(logn) 空间复杂度o(1)
      */
     public static int search(int[] arry,int target) {
         if(arry == null || arry.length == 0) {
@@ -647,10 +649,38 @@ public class ArrayLeetCode {
         if(changeTarget-originArr[index] >= 0) {//类似深度优先遍历 一条道走到黑 当结果<0时 为结束条件
             //把每个数放到新数组中保存
             newArr.add(originArr[index]);
-            //再次递归只改变目标数 此次递归只针对当前深度优先遍历 所以最开始的位置还是index 只改变的是每次目标节点数值
+            //再次递归只改变目标数 此次递归只针对当前深度优先遍历 所以最开始的位置还是index 改变的是每次目标节点数值
             rescursion(originArr,changeTarget-originArr[index],res,newArr,index);
             //除去最后一个位置是防止它的最后一个满足条件的数进来以后<0
             newArr.remove(newArr.size()-1);
         }
+    }
+    /**
+     time:2021/3/30  228. 汇总区间
+     给定一个无重复元素的有序整数数组 nums 。
+     返回 恰好覆盖数组中所有数字 的 最小有序 区间范围列表。也就是说，nums 的每个元素都恰好被某个区间范围所覆盖，并且不存在属于某个范围但不属于 nums 的数字 x 。
+     列表中的每个区间范围 [a,b] 应该按如下格式输出：
+     "a->b" ，如果 a != b
+     "a" ，如果 a == b
+     */
+    public static  List<String> summaryRanges(int[] arrys) {
+        List<String> ret = new ArrayList<String>();
+        int i = 0;
+        int n = arrys.length;
+        while (i < n) {
+            int low = i;
+            i++;
+            while (i < n && arrys[i] == arrys[i - 1] + 1) {
+                i++;
+            }
+            int high = i - 1;
+            StringBuffer temp = new StringBuffer(Integer.toString(arrys[low]));
+            if (low < high) {
+                temp.append("->");
+                temp.append(Integer.toString(arrys[high]));
+            }
+            ret.add(temp.toString());
+        }
+        return ret;
     }
 }
