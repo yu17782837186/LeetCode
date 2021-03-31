@@ -46,7 +46,9 @@ public class ArrayLeetCode {
 //        List<List<Integer>> lists = combineSum(new int[]{2, 3, 6, 7}, 7);
 //        System.out.println(Arrays.asList(lists));
 
-        System.out.println(summaryRanges(new int[]{0,1,2,4,5,7}));
+//        System.out.println(summaryRanges(new int[]{0,1,2,4,5,7}));
+
+        System.out.println(combineSum2(new int[]{2,5,2,1,2},5));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
@@ -626,7 +628,7 @@ public class ArrayLeetCode {
      说明：
      所有数字（包括 target）都是正整数。
      解集不能包含重复的组合。
-     回朔：时间复杂度o(n) 空间复杂度o(target) n为所有可行解的长度和 target为最差需要递归的层数
+     回溯+递归：时间复杂度o(n) 空间复杂度o(target) n为所有可行解的长度和 target为最差需要递归的层数
      */
     public static List<List<Integer>> combineSum(int[] arry,int target) {
         //返回最终的数组
@@ -636,6 +638,13 @@ public class ArrayLeetCode {
         rescursion(arry,target,result,newArr,0);
         return result;
     }
+    /**
+     * @param originArr 原数组
+     * @param changeTarget 改变的目标值
+     * @param res 最终结果的数组
+     * @param newArr 存放符合条件的数组
+     * @param index 递归的当前位置
+     */
     private static void rescursion(int[] originArr, int changeTarget, List<List<Integer>> res, List<Integer> newArr, int index) {
         if(index == originArr.length) {//等于数组长度递归结束
             return;
@@ -651,7 +660,7 @@ public class ArrayLeetCode {
             newArr.add(originArr[index]);
             //再次递归只改变目标数 此次递归只针对当前深度优先遍历 所以最开始的位置还是index 改变的是每次目标节点数值
             rescursion(originArr,changeTarget-originArr[index],res,newArr,index);
-            //除去最后一个位置是防止它的最后一个满足条件的数进来以后<0
+            //回溯
             newArr.remove(newArr.size()-1);
         }
     }
@@ -662,25 +671,68 @@ public class ArrayLeetCode {
      列表中的每个区间范围 [a,b] 应该按如下格式输出：
      "a->b" ，如果 a != b
      "a" ，如果 a == b
+     回溯+递归：时间复杂度o(n) 空间复杂度o(1)
      */
-    public static  List<String> summaryRanges(int[] arrys) {
-        List<String> ret = new ArrayList<String>();
-        int i = 0;
-        int n = arrys.length;
-        while (i < n) {
-            int low = i;
-            i++;
-            while (i < n && arrys[i] == arrys[i - 1] + 1) {
-                i++;
+    public static  List<String> summaryRanges(int[] arry) {
+        List<String> result = new ArrayList<>();
+        int start = 0;
+        int len = arry.length;
+        while(start < len) {
+            int low = start;
+            start++;
+            while (start < len && arry[start] == arry[start-1]+1) {
+                start++;
             }
-            int high = i - 1;
-            StringBuffer temp = new StringBuffer(Integer.toString(arrys[low]));
-            if (low < high) {
-                temp.append("->");
-                temp.append(Integer.toString(arrys[high]));
+            int high = start-1;
+            StringBuilder sb = new StringBuilder(Integer.toString(low));
+            if(low < high) {
+                sb.append("->");
+                sb.append(Integer.toString(high));
             }
-            ret.add(temp.toString());
+            result.add(sb.toString());
         }
-        return ret;
+        return result;
+    }
+    /**
+     time:2021/3/31  40. 组合总和 II
+     给定一个数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
+     candidates 中的每个数字在每个组合中只能使用一次。
+     说明：
+     所有数字（包括目标数）都是正整数。
+     解集不能包含重复的组合。 
+     回溯+递归：时间复杂度o(n*2^n) 空间复杂度o(n) 因为每个数都可以选或者不选 最坏情况下每个数都不相同也就是2^n 一个满足要求的组合需要o(n)的时间复杂度 所以总的时间复杂度为n*2^n
+    */
+    public static List<List<Integer>> combineSum2(int[] arry,int target) {
+        //排序 方便下面的set去重
+        Arrays.sort(arry);
+        //返回最终结果的数组 set去重
+        Set<List<Integer>> result = new HashSet<>();
+        //存放符合条件的数
+        List<Integer> newArr = new ArrayList<>();
+        rescursion2(arry,newArr,target,0,result);
+        return new ArrayList<>(result);
+    }
+    /**
+     * @param originalArr 原数组
+     * @param newArr 符合条件的数组
+     * @param changeTarget 改变的目标值
+     * @param index 递归的位置
+     * @param res 返回的最终结果
+     */
+    private static void rescursion2(int[] originalArr, List<Integer> newArr, int changeTarget, int index, Set<List<Integer>> res) {
+        if(changeTarget == 0) {
+            res.add(new ArrayList<>(newArr));
+            return;
+        }
+        if(index == originalArr.length || changeTarget < 0) {
+            return;
+        }
+        newArr.add(originalArr[index]);
+        //包含当前这个数
+        rescursion2(originalArr,newArr,changeTarget-originalArr[index],index+1,res);
+        //回溯
+        newArr.remove(newArr.size()-1);
+        //不包含当前这个数
+        rescursion2(originalArr,newArr,changeTarget,index+1,res);
     }
 }
