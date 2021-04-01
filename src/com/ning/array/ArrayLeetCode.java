@@ -48,7 +48,9 @@ public class ArrayLeetCode {
 
 //        System.out.println(summaryRanges(new int[]{0,1,2,4,5,7}));
 
-        System.out.println(combineSum2(new int[]{2,5,2,1,2},5));
+//        System.out.println(combineSum2(new int[]{2,5,2,1,2},5));
+
+        System.out.println(jumpGame(new int[]{2,3,1,1,4}));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
@@ -734,5 +736,26 @@ public class ArrayLeetCode {
         newArr.remove(newArr.size()-1);
         //不包含当前这个数
         rescursion2(originalArr,newArr,changeTarget,index+1,res);
+    }
+    /**
+     time:2021/4/1  45. 跳跃游戏 II
+     给定一个非负整数数组，你最初位于数组的第一个位置。
+     数组中的每个元素代表你在该位置可以跳跃的最大长度。
+     你的目标是使用最少的跳跃次数到达数组的最后一个位置。
+     贪心：时间复杂度o(n^2) 空间复杂度o(1) 寻求可优解
+     */
+    public static int jumpGame(int[] arry) {
+        int position = arry.length-1;
+        int step = 0;
+        while(position > 0) {//3.判断记录的当前的位置 再次进入循环寻求可优解
+            for(int i = 0;i < position;i++) {// 1.从后向前寻找可优解的最大方案
+                if(i+arry[i] >= position) {// 2.找到了当前的位置跳跃的最大数 记录当前位置 步数+1 结束循环
+                    position = i;
+                    step++;
+                    break;
+                }
+            }
+        }
+        return step;
     }
 }
