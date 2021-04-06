@@ -186,7 +186,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LinkedListLeetCode">
+  <component name="RunManager" selected="Application.ArrayLeetCode">
     <configuration name="ArrayLeetCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ning.array.ArrayLeetCode" />
       <module name="Leetcode" />
@@ -268,8 +268,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LinkedListLeetCode" />
         <item itemvalue="Application.ArrayLeetCode" />
+        <item itemvalue="Application.LinkedListLeetCode" />
         <item itemvalue="Application.BinarySearchLeetCode" />
       </list>
     </recent_temporary>
