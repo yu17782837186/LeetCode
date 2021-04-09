@@ -132,4 +132,40 @@ public class LinkedListLeetCode {
         }
         return null;//没有返回null
     }
+    /**
+     time:2021/4/9 203. 移除链表元素
+     给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。
+     时间复杂度:o(n) 空间复杂度:o(1)
+     */
+    public ListNode removeElement(ListNode head,int val) {
+        ListNode temp = new ListNode(0);
+        temp.next = head;
+        ListNode pre = temp;
+        ListNode cur = head;
+        while(cur != null) {
+            if(cur.val == val) {
+                pre.next = cur.next;
+            }else {
+                pre = cur;
+            }
+            cur = cur.next;
+        }
+        return temp.next;
+    }
+    /**
+     time:2021/4/9  206. 反转链表
+     反转一个单链表。
+     时间复杂度:o(n) 空间复杂度:o(1)
+     */
+    public ListNode reverseLinked(ListNode head) {
+        ListNode pre = null;
+        ListNode cur = head;
+        while(cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return pre;
+    }
 }

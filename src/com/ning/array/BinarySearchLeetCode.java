@@ -20,6 +20,8 @@ public class BinarySearchLeetCode {
 
 //        System.out.println(Arrays.toString(intersectionChangeWay1(new int[]{4,9,5},new int[]{9,4,9,8,4})));
 //        System.out.println(Arrays.toString(intersectionChangeWay2(new int[]{1,2,2,1},new int[]{2,2})));
+
+        System.out.println(isPerfectSquare(4));
     }
     /**
      time:2021/3/19 35. 搜索插入位置
@@ -244,5 +246,26 @@ public class BinarySearchLeetCode {
             }
         }
         return Arrays.copyOfRange(intersection,0,j);
+    }
+    /**
+     time:2021/4/9  367. 有效的完全平方数
+     给定一个 正整数 num ，编写一个函数，如果 num 是一个完全平方数，则返回 true ，否则返回 false 。
+     进阶：不要 使用任何内置的库函数，如  sqrt 。
+     */
+    //泰勒级数求解
+    public static boolean isPerfectSquare(int num) {
+        if(num == 0) {
+            return true;
+        }
+        double c = num;
+        double x0 = num;
+        while (true) {
+            double xi = 0.5*(x0+c/x0);
+            if(Math.abs(x0-xi) < 1e-7) {
+                break;
+            }
+            x0 = xi;
+        }
+        return (x0 % 1) < 1e-7;
     }
 }
