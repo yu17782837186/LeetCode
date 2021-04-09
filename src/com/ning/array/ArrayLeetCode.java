@@ -50,7 +50,7 @@ public class ArrayLeetCode {
 
 //        System.out.println(combineSum2(new int[]{2,5,2,1,2},5));
 
-        System.out.println(jumpGame(new int[]{2,3,1,1,4}));
+//        System.out.println(jumpGame(new int[]{2,3,1,1,4}));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
@@ -757,5 +757,46 @@ public class ArrayLeetCode {
             }
         }
         return step;
+    }
+    /**
+     time:2021/4/9  48. 旋转图像
+     给定一个 n × n 的二维矩阵 matrix 表示一个图像。请你将图像顺时针旋转 90 度。
+     你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要 使用另一个矩阵来旋转图像。
+     */
+    //方法(1)使用辅助数组 时间复杂度 o(n^2) 空间复杂度o(n^2) 需要额外创建一个原数组一样大的空间
+    public static void rotate1(int[][] arry) {
+        int n = arry.length;
+        int[][] newArr = new int[n][n];
+        for(int i = 0;i < n;i++) {
+            for(int j = 0;j < n;j++) {
+                newArr[j][n-i-1] = arry[i][j];//顺时针旋转90度
+            }
+        }
+        //将新数组的值赋给原数组
+        for(int i = 0;i < n;i++) {
+            for(int j = 0;j < n;j++) {
+                arry[i][j] = newArr[i][i];
+            }
+        }
+    }
+    //方法(2)翻转 时间复杂度 o(n^2) 空间复杂度o(1)
+    public static void rotate2 (int[][] arry) {
+        int n = arry.length;
+        //上下翻转
+        for(int i = 0;i < n/2;i++) {//行长度为一半即可
+            for(int j = 0;j < n;j++) {
+                int tmp = arry[i][j];
+                arry[i][j] = arry[n-i-1][j];
+                arry[n-i-1][j] = tmp;
+            }
+        }
+        //斜对称翻转
+        for(int i = 0;i < n;i++) {
+            for(int j = 0;j < i;j++) {
+                int tmp = arry[i][j];
+                arry[i][j] = arry[j][i];
+                arry[j][i] = tmp;
+            }
+        }
     }
 }
