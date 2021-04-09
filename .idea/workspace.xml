@@ -42,8 +42,8 @@
       <file leaf-file-name="ArrayLeetCode.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="54" column="29" lean-forward="true" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
+            <state relative-caret-position="150">
+              <caret line="781" column="36" lean-forward="true" selection-start-line="781" selection-start-column="36" selection-end-line="781" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -118,7 +118,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-11" />
     <option name="width" value="1940" />
     <option name="height" value="1067" />
@@ -310,15 +310,15 @@
       <workItem from="1617695346424" duration="4553000" />
       <workItem from="1617785571606" duration="2512000" />
       <workItem from="1617866582885" duration="3378000" />
-      <workItem from="1617936560085" duration="7811000" />
+      <workItem from="1617936560085" duration="8165000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105667000" />
+    <option name="totallyTimeSpent" value="106021000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="0" width="1940" height="1067" extended-state="0" />
+    <frame x="-11" y="0" width="1940" height="1067" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -330,7 +330,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26659292" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2721239" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.2090708" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32964602" />
       <window_info id="Capture Tool" order="2" />
@@ -640,8 +640,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="54" column="29" lean-forward="true" selection-start-line="54" selection-start-column="29" selection-end-line="54" selection-end-column="29" />
+        <state relative-caret-position="150">
+          <caret line="781" column="36" lean-forward="true" selection-start-line="781" selection-start-column="36" selection-end-line="781" selection-end-column="36" />
         </state>
       </provider>
     </entry>
