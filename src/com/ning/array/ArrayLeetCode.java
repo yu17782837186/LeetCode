@@ -50,7 +50,7 @@ public class ArrayLeetCode {
 
 //        System.out.println(combineSum2(new int[]{2,5,2,1,2},5));
 
-//        System.out.println(jumpGame(new int[]{2,3,1,1,4}));
+        System.out.println(jumpGame(new int[]{2,3,1,1,4}));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
