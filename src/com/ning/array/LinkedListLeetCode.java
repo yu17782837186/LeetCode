@@ -1,7 +1,6 @@
 package com.ning.array;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class LinkedListLeetCode {
     class ListNode {
@@ -167,5 +166,92 @@ public class LinkedListLeetCode {
             cur = next;
         }
         return pre;
+    }
+    /**
+     time:2021/4/12  234. 回文链表
+     请判断一个链表是否为回文链表。
+     */
+    //方法(1) 使用栈 时间复杂度o(n) 空间复杂度o(n)需要创建额外空间长度为n的栈
+    public boolean isPalindRome1(ListNode head) {
+        Stack<Integer> stack = new Stack<>();//创建栈
+        ListNode temp1 = head;
+        while(temp1 != null) {
+            stack.push(temp1.val);//进栈
+            temp1 = temp1.next;
+        }
+        ListNode temp2 = head;
+        while(temp2 != null) {
+            if(stack.pop() != temp2.val) {//出栈判断 不相等直接false
+                return false;
+            }
+            temp2 = temp2.next;//相等 遍历链表
+        }
+        return true;
+    }
+    //方法(2)双指针 时间复杂度o(n) 空间复杂度o(n)需要创建额外空间长度为n的数组
+    public boolean isPalindRome2(ListNode head) {
+        List<Integer> list = new ArrayList<>();//定义数组
+        ListNode temp = head;
+        while(temp != null) {
+            list.add(temp.val);//放到数组里面去
+            temp = temp.next;
+        }
+        int start = 0;//定义头指针
+        int end = list.size()-1;//定义尾指针
+        while(start < end) {//头指针小于尾指针时(不用相等)
+            if(list.get(start) != list.get(end) ) {//如果头尾指针获得的值不相等 return false
+                return false;
+            }
+            start++;//两个指针同时移动
+            end--;
+        }
+        return true;
+    }
+    //方法(3) 快慢指针 时间复杂度o(n) 空间复杂度o(1)
+    public boolean isPalindRome3(ListNode head) {
+        if(head == null) {
+            return true;
+        }
+        //得到后半部分的链表
+        ListNode halfLinked = getEndHalfLinked(head);
+        //反转后半部分的链表 传入的是next的原因是保证了回文中间的单个值不需要判断是否是回文
+        ListNode reverseEndHalfLinked = reverseEndHalf(halfLinked.next);
+        //定义p1 用于遍历最开始的链表
+        ListNode p1 = head;
+        //定义p2 用于遍历反转的后半部分的链表
+        ListNode p2 = reverseEndHalfLinked;
+        while (p2 != null) {//条件为反转后的链表不为空
+            if(p1.val != p2.val) {//如果不是回文 则值不相等
+                return false;
+            }
+            //回文的话 同时移动两个节点
+            p1 = p1.next;
+            p2 = p2.next;
+        }
+        //还原反转的后半部分的链表
+        reverseEndHalf(reverseEndHalfLinked);
+        return true;
+    }
+    //反转后半部分的链表
+    private ListNode reverseEndHalf(ListNode nextNode) {
+        ListNode pre = null;
+        ListNode cur = nextNode;
+        while (cur != null) {
+            ListNode next = cur.next;//1 2 8 9 10 创建临时节点存放当前节点的下一个节点 cur=1 next=2 cur=8 next=9
+            cur.next = pre;//cur的下一个地址为空 cur的下一个地址为pre=1的地址
+            pre = cur;//pre指向cur pre=cur=1 pre=cur=8
+            cur = next;//cur指向next cur=next=2 cur=next=9
+        }
+        return pre;
+    }
+    //得到后半部分的链表
+    private ListNode getEndHalfLinked(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
     }
 }

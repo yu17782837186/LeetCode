@@ -21,7 +21,12 @@ public class BinarySearchLeetCode {
 //        System.out.println(Arrays.toString(intersectionChangeWay1(new int[]{4,9,5},new int[]{9,4,9,8,4})));
 //        System.out.println(Arrays.toString(intersectionChangeWay2(new int[]{1,2,2,1},new int[]{2,2})));
 
-        System.out.println(isPerfectSquare(4));
+//        System.out.println(isPerfectSquare(4));
+
+//        System.out.println(isSubsequence("abc","ahbgdc"));
+
+        System.out.println(nextChar1(new char[]{'c','f','j'},'a'));
+        System.out.println(nextChar2(new char[]{'c','f','j'},'c'));
     }
     /**
      time:2021/3/19 35. 搜索插入位置
@@ -267,5 +272,53 @@ public class BinarySearchLeetCode {
             x0 = xi;
         }
         return (x0 % 1) < 1e-7;
+    }
+    /**
+     time:2021/4/12  392. 判断子序列
+     给定字符串 s 和 t ，判断 s 是否为 t 的子序列。
+     字符串的一个子序列是原始字符串删除一些（也可以不删除）字符而不改变剩余字符相对位置形成的新字符串。（例如，"ace"是"abcde"的一个子序列，而"aec"不是）
+     双指针：时间复杂度 o(n) 空间复杂度o(1)
+     */
+    public static boolean isSubsequence(String s,String t) {
+        int s1 = s.length();
+        int t1 = t.length();
+        int i = 0;
+        int j = 0;
+        while(i < s1 && j < t1) {
+            if(s.charAt(i) == t.charAt(j)) {
+                i++;
+            }
+            j++;
+        }
+        return i == s1;
+    }
+    /**
+     time:2021/4/12  744. 寻找比目标字母大的最小字母
+     给你一个排序后的字符列表 letters ，列表中只包含小写英文字母。另给出一个目标字母 target，请你寻找在这一有序列表里比目标字母大的最小字母。
+     在比较时，字母是依序循环出现的。举个例子：
+     如果目标字母 target = 'z' 并且字符列表为 letters = ['a', 'b']，则答案返回 'a'
+     */
+    //方法(1)二分查找 时间复杂度 o(logn) 空间复杂度o(1)
+    public static char nextChar1(char[] letters,char target) {
+        int low = 0;
+        int high = letters.length-1;
+        while(low <= high) {
+            int mid = low+(high-low)/2;
+            if(letters[mid] <= target) {
+                low = mid+1;
+            }else {
+                high = mid-1;
+            }
+        }
+        return low < letters.length ? letters[low] : letters[0];
+    }
+    //方法(2)线性扫描 时间复杂度o(n) 空间复杂度o(1)
+    public static char nextChar2(char[] letters,char target) {
+        for(char c : letters) {
+            if(c > target) {
+                return c;
+            }
+        }
+        return letters[0];
     }
 }
