@@ -50,7 +50,9 @@ public class ArrayLeetCode {
 
 //        System.out.println(combineSum2(new int[]{2,5,2,1,2},5));
 
-        System.out.println(jumpGame(new int[]{2,3,1,1,4}));
+//        System.out.println(jumpGame(new int[]{2,3,1,1,4}));
+
+        System.out.println(spiralMatrix(new int[][]{{1,2,3},{4,5,6},{7,8,9}}));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
@@ -798,5 +800,45 @@ public class ArrayLeetCode {
                 arry[j][i] = tmp;
             }
         }
+    }
+    /**
+     time:2021/4/12  54. 螺旋矩阵
+     给你一个 m 行 n 列的矩阵 matrix ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素。
+     输入：matrix = [[1,2,3],[4,5,6],[7,8,9]]
+     输出：[1,2,3,6,9,8,7,4,5]
+     */
+    //思路：从外到内，按层模拟，依次访问，时间复杂度o(mn)(m,n是输入矩阵的行数和列数) 空间复杂度o(1)
+    public static List<Integer> spiralMatrix(int[][] matrix) {
+        List<Integer> list = new ArrayList<>();
+        if(matrix == null || matrix[0].length == 0 || matrix.length == 0) {
+            return list;
+        }
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        int left = 0;//左边
+        int right = cols-1;//右边
+        int top = 0;//上边
+        int bottom = rows-1;//下边
+        while(left <= right && top <= bottom) {
+            for(int col = left;col <= right;col++) {//从左到右
+                list.add(matrix[left][col]);
+            }
+            for(int row = top+1;row <= bottom;row++) {//从右到下
+                list.add(matrix[row][right]);
+            }
+            if(left < right && top < bottom) {
+                for(int col = right-1;col > left;col--) {//从下到左
+                    list.add(matrix[bottom][col]);
+                }
+                for(int row = bottom;row > top;row--) {//从左到上
+                    list.add(matrix[row][left]);
+                }
+            }
+            left++;
+            right--;
+            top++;
+            bottom--;
+        }
+        return list;
     }
 }
