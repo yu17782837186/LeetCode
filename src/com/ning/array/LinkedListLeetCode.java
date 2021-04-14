@@ -263,4 +263,20 @@ public class LinkedListLeetCode {
         head.val = head.next.val;
         head.next = head.next.next;
     }
+    /**
+     time:2021/4/14  876. 链表的中间结点
+     给定一个头结点为 head 的非空单链表，返回链表的中间结点。
+     如果有两个中间结点，则返回第二个中间结点。
+     */
+    //快慢指针 时间复杂度o(n) 空间复杂度o(1)
+    public ListNode middleNode(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast != null && fast.next.next != null) {//条件 快指针不为空并且快指针的next不为空的时候
+            //快指针走两步 慢指针走一步 快指针到结尾 慢指针一定在中间
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;//返回慢指针的位置
+    }
 }
