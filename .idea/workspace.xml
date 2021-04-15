@@ -42,8 +42,8 @@
       <file leaf-file-name="ArrayLeetCode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-640">
-              <caret line="810" column="48" lean-forward="true" selection-start-line="810" selection-start-column="48" selection-end-line="810" selection-end-column="48" />
+            <state relative-caret-position="29896">
+              <caret line="810" column="48" selection-start-line="810" selection-start-column="48" selection-end-line="810" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,20 +51,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinkedListLeetCode.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LinkedListLeetCode.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ning/array/LinkedListLeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="277" column="34" lean-forward="true" selection-start-line="277" selection-start-column="34" selection-end-line="277" selection-end-column="34" />
+            <state relative-caret-position="373">
+              <caret line="291" column="20" lean-forward="true" selection-start-line="291" selection-start-column="20" selection-end-line="291" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BinarySearchLeetCode.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BinarySearchLeetCode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ning/array/BinarySearchLeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="215" column="41" lean-forward="true" selection-start-line="215" selection-start-column="41" selection-end-line="215" selection-end-column="41" />
+            <state relative-caret-position="-2178">
+              <caret line="215" column="41" selection-start-line="215" selection-start-column="41" selection-end-line="215" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -129,6 +129,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -147,11 +148,17 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="array" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="array" type="462c0819:PsiDirectoryNode" />
+              <item name="BinarySearchLeetCode" type="1a9f42e2:ClassTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
@@ -181,7 +188,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BinarySearchLeetCode">
+  <component name="RunManager" selected="Application.ArrayLeetCode">
     <configuration name="ArrayLeetCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ning.array.ArrayLeetCode" />
       <module name="Leetcode" />
@@ -263,8 +270,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BinarySearchLeetCode" />
         <item itemvalue="Application.ArrayLeetCode" />
+        <item itemvalue="Application.BinarySearchLeetCode" />
         <item itemvalue="Application.LinkedListLeetCode" />
       </list>
     </recent_temporary>
@@ -314,12 +321,13 @@
       <workItem from="1618189043869" duration="3000" />
       <workItem from="1618192004718" duration="15295000" />
       <workItem from="1618303665360" duration="745000" />
-      <workItem from="1618387226849" duration="965000" />
+      <workItem from="1618387226849" duration="1563000" />
+      <workItem from="1618478197566" duration="264000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126026000" />
+    <option name="totallyTimeSpent" value="126888000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="0" width="1940" height="1067" extended-state="0" />
@@ -338,7 +346,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32964602" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20425531" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20638297" />
       <window_info anchor="right" id="Database" order="3" weight="0.32978722" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -612,8 +620,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-640">
-          <caret line="810" column="48" lean-forward="true" selection-start-line="810" selection-start-column="48" selection-end-line="810" selection-end-column="48" />
+        <state relative-caret-position="29896">
+          <caret line="810" column="48" selection-start-line="810" selection-start-column="48" selection-end-line="810" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ning/array/BinarySearchLeetCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2178">
+          <caret line="215" column="41" selection-start-line="215" selection-start-column="41" selection-end-line="215" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -622,18 +640,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ning/array/LinkedListLeetCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="277" column="34" lean-forward="true" selection-start-line="277" selection-start-column="34" selection-end-line="277" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ning/array/BinarySearchLeetCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="215" column="41" lean-forward="true" selection-start-line="215" selection-start-column="41" selection-end-line="215" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="373">
+          <caret line="291" column="20" lean-forward="true" selection-start-line="291" selection-start-column="20" selection-end-line="291" selection-end-column="20" />
         </state>
       </provider>
     </entry>

@@ -279,4 +279,22 @@ public class LinkedListLeetCode {
         }
         return slow;//返回慢指针的位置
     }
+    /**
+     time:2021/4/15  1290. 二进制链表转整数
+     给你一个单链表的引用结点 head。链表中每个结点的值不是 0 就是 1。已知此链表是一个整数数字的二进制表示形式。
+     请你返回该链表所表示数字的 十进制值 。
+     */
+    //进行位移 时间复杂度o(n) 空间复杂度o(1)
+    public int getDecimal(ListNode head) {
+        if(head.next == null) {
+            return head.val;
+        }
+        int res = 0;
+        while(head != null) {
+            res <<= 1; //将res每次左移一位
+            res += head.val; //res加上当前节点的值
+            head = head.next; //移动当前节点
+        }
+        return res;//返回结果
+    }
 }
