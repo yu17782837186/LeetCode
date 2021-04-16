@@ -297,4 +297,25 @@ public class LinkedListLeetCode {
         }
         return res;//返回结果
     }
+    /**
+     time:2021/4/16  面试题 02.01. 移除重复节点
+     编写代码，移除未排序链表中的重复节点。保留最开始出现的节点。
+     */
+    //哈希去重 时间复杂度o(n) 空间复杂度o(1)
+    public ListNode deleteRepeat(ListNode head) {
+        if(head == null) {
+            return head;
+        }
+        Set<Integer> set = new HashSet<>();
+        ListNode cur = head;
+        while(cur.next != null) {
+            set.add(cur.val);
+            if(set.contains(cur.next.val)) {
+                cur.next = cur.next.next;
+            }else {
+                cur = cur.next;
+            }
+        }
+        return head;
+    }
 }
