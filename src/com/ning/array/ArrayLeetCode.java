@@ -52,7 +52,9 @@ public class ArrayLeetCode {
 
 //        System.out.println(jumpGame(new int[]{2,3,1,1,4}));
 
-        System.out.println(spiralMatrix(new int[][]{{1,2,3},{4,5,6},{7,8,9}}));
+//        System.out.println(spiralMatrix(new int[][]{{1,2,3},{4,5,6},{7,8,9}}));
+
+        System.out.println(jumpGame2(new int[]{2,3,1,1,4}));
     }
     //转置矩阵1
     public static int[][] transPose(int[][] arry) {
@@ -840,5 +842,21 @@ public class ArrayLeetCode {
             bottom--;
         }
         return list;
+    }
+    /**
+     time:2021/4/16  55. 跳跃游戏
+     给定一个非负整数数组 nums ，你最初位于数组的 第一个下标 。
+     数组中的每个元素代表你在该位置可以跳跃的最大长度。
+     判断你是否能够到达最后一个下标。
+     */
+    //贪心  时间复杂度o(n)  空间复杂度o(1) 从后向前推
+    public static boolean jumpGame2(int[] arry) {
+        int finalPos = arry.length-1;
+        for(int i = arry.length-1;i >= 0;i--) {//反向遍历
+            if(i+arry[i] >= finalPos) {//如果从当地位置(i)出发, 跳array[i]步能达到终点(finalPos), 那么更新终点为当前位置
+                finalPos = i;
+            }
+        }
+        return finalPos == 0;// 逆推是否到达了起点, 如果到达了, 那么说明可达
     }
 }
