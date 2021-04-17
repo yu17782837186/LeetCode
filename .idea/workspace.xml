@@ -42,8 +42,8 @@
       <file leaf-file-name="ArrayLeetCode.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3202">
-              <caret line="759" column="17" lean-forward="true" selection-start-line="759" selection-start-column="17" selection-end-line="759" selection-end-column="17" />
+            <state relative-caret-position="222">
+              <caret line="725" column="25" lean-forward="true" selection-start-line="725" selection-start-column="25" selection-end-line="725" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,8 +54,8 @@
       <file leaf-file-name="LinkedListLeetCode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ning/array/LinkedListLeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="314" column="19" selection-start-line="314" selection-start-column="19" selection-end-line="314" selection-end-column="19" />
+            <state relative-caret-position="77">
+              <caret line="324" column="25" selection-start-line="324" selection-start-column="25" selection-end-line="324" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -63,11 +63,8 @@
       <file leaf-file-name="BinarySearchLeetCode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ning/array/BinarySearchLeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11803">
+            <state relative-caret-position="11877">
               <caret line="321" column="26" selection-start-line="321" selection-start-column="26" selection-end-line="321" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -90,8 +87,8 @@
         <option value="$PROJECT_DIR$/src/com/ning/array/Linked.java" />
         <option value="$PROJECT_DIR$/src/com/ning/array/MyLinked.java" />
         <option value="$PROJECT_DIR$/src/com/ning/array/BinarySearchLeetCode.java" />
-        <option value="$PROJECT_DIR$/src/com/ning/array/LinkedListLeetCode.java" />
         <option value="$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java" />
+        <option value="$PROJECT_DIR$/src/com/ning/array/LinkedListLeetCode.java" />
       </list>
     </option>
   </component>
@@ -129,7 +126,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,6 +148,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
@@ -317,45 +314,46 @@
       <workItem from="1618387226849" duration="1563000" />
       <workItem from="1618478197566" duration="587000" />
       <workItem from="1618553404101" duration="1186000" />
-      <workItem from="1618562470295" duration="1025000" />
+      <workItem from="1618562470295" duration="1589000" />
+      <workItem from="1618672421500" duration="218000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129422000" />
+    <option name="totallyTimeSpent" value="130223000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="0" width="1940" height="1067" extended-state="1" />
+    <frame x="-11" y="0" width="1940" height="1067" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32964602" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25553098" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.2090708" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25553098" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32964602" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2106383" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21276596" />
       <window_info anchor="right" id="Database" order="3" weight="0.32978722" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.40707964" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40707964" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32964602" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,25 +613,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ning/array/BinarySearchLeetCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11803">
+        <state relative-caret-position="11877">
           <caret line="321" column="26" selection-start-line="321" selection-start-column="26" selection-end-line="321" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ning/array/LinkedListLeetCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="314" column="19" selection-start-line="314" selection-start-column="19" selection-end-line="314" selection-end-column="19" />
+        <state relative-caret-position="77">
+          <caret line="324" column="25" selection-start-line="324" selection-start-column="25" selection-end-line="324" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3202">
-          <caret line="759" column="17" lean-forward="true" selection-start-line="759" selection-start-column="17" selection-end-line="759" selection-end-column="17" />
+        <state relative-caret-position="222">
+          <caret line="725" column="25" lean-forward="true" selection-start-line="725" selection-start-column="25" selection-end-line="725" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

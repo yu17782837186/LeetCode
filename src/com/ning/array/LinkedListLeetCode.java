@@ -318,4 +318,50 @@ public class LinkedListLeetCode {
         }
         return head;
     }
+    /**
+     time:2021/4/17  面试题 02.06. 回文链表
+     编写一个函数，检查输入的链表是否是回文的。
+     */
+    //时间复杂度 o(n) 空间复杂度o(1)
+    public boolean isPalindrome(ListNode head) {
+        if(head == null) {
+            return true;
+        }
+        //找到中间节点
+        ListNode midLinked = findMidNode(head);
+        //反转后半部分的节点
+        ListNode reverseLinked = reverseEndLinked(midLinked.next);
+        ListNode cur1 = head;
+        ListNode cur2 = reverseLinked;
+        while(cur2 != null) {
+            if(cur1.val != cur2.val) {
+                return false;
+            }
+            cur1 = cur1.next;
+            cur2 = cur2.next;
+        }
+        //还原链表
+        reverseEndLinked(reverseLinked);
+        return true;
+    }
+    public ListNode findMidNode(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    public ListNode reverseEndLinked(ListNode head) {
+        ListNode pre = null;
+        ListNode cur = head;
+        while(cur != null) {
+            ListNode tmp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = cur.next;
+        }
+        return cur;
+    }
 }
