@@ -344,7 +344,7 @@ public class LinkedListLeetCode {
         reverseEndLinked(reverseLinked);
         return true;
     }
-    public ListNode findMidNode(ListNode head) {
+    private ListNode findMidNode(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
         while(fast != null && fast.next != null) {
@@ -353,7 +353,7 @@ public class LinkedListLeetCode {
         }
         return slow;
     }
-    public ListNode reverseEndLinked(ListNode head) {
+    private ListNode reverseEndLinked(ListNode head) {
         ListNode pre = null;
         ListNode cur = head;
         while(cur != null) {
@@ -363,5 +363,20 @@ public class LinkedListLeetCode {
             cur = cur.next;
         }
         return cur;
+    }
+    /**
+     time:2021/4/18 面试题 02.07. 链表相交
+     给定两个（单向）链表，判定它们是否相交并返回交点。请注意相交的定义基于节点的引用，而不是基于节点的值。换句话说，如果一个链表的第k个节点与另一个链表的第j个节点是同一节点（引用完全相同），则这两个链表相交。
+     */
+    //时间复杂度o(n) 空间复杂度o(1)
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode la = headA;
+        ListNode lb = headB;
+        while(la != lb){
+            //到达链表末尾时，重新走另一条链表的路
+            la = la == null ? headB : la.next;
+            lb = lb == null ? headA : lb.next;
+        }
+        return lb;
     }
 }
