@@ -63,8 +63,8 @@
       <file leaf-file-name="BinarySearchLeetCode.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ning/array/BinarySearchLeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="316" column="31" lean-forward="true" selection-start-line="316" selection-start-column="31" selection-end-line="316" selection-end-column="31" />
+            <state relative-caret-position="211">
+              <caret line="313" column="5" lean-forward="true" selection-start-line="313" selection-start-column="5" selection-end-line="313" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -185,7 +185,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BinarySearchLeetCode">
+  <component name="RunManager" selected="Application.ArrayLeetCode">
     <configuration name="ArrayLeetCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ning.array.ArrayLeetCode" />
       <module name="Leetcode" />
@@ -267,8 +267,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BinarySearchLeetCode" />
         <item itemvalue="Application.ArrayLeetCode" />
+        <item itemvalue="Application.BinarySearchLeetCode" />
         <item itemvalue="Application.LinkedListLeetCode" />
       </list>
     </recent_temporary>
@@ -323,12 +323,12 @@
       <workItem from="1618553404101" duration="1186000" />
       <workItem from="1618562470295" duration="1589000" />
       <workItem from="1618672421500" duration="391000" />
-      <workItem from="1618756633409" duration="222000" />
+      <workItem from="1618756633409" duration="474000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130623000" />
+    <option name="totallyTimeSpent" value="130866000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="0" width="1940" height="1067" extended-state="0" />
@@ -336,6 +336,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32964602" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -343,11 +344,11 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.2090708" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.25553098" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25553098" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32964602" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21489362" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21489362" />
       <window_info anchor="right" id="Database" order="3" weight="0.32978722" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -361,7 +362,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32964602" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -638,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ning/array/BinarySearchLeetCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="316" column="31" lean-forward="true" selection-start-line="316" selection-start-column="31" selection-end-line="316" selection-end-column="31" />
+        <state relative-caret-position="211">
+          <caret line="313" column="5" lean-forward="true" selection-start-line="313" selection-start-column="5" selection-end-line="313" selection-end-column="5" />
         </state>
       </provider>
     </entry>
