@@ -4,13 +4,9 @@
     <list default="true" id="c723447c-c035-45fb-b31f-599f123dd8c6" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/src/com/ning/array/BinarySearchLeetCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeetCode/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeetCode/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeetCode/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeetCode/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeetCode/Leetcode.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeetCode/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/LeetCode/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LeetCode/out/production/Leetcode/com/ning/array/ArrayLeetCode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeetCode/src/com/ning/array/ArrayLeetCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeetCode/src/com/ning/array/ArrayLeetCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/LeetCode/src/com/ning/array/ArrayLeetCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Leetcode/com/ning/array/ArrayLeetCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Leetcode/com/ning/array/ArrayLeetCode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java" afterDir="false" />
     </list>
@@ -43,11 +39,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="ArrayLeetCode.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ArrayLeetCode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="724" column="25" lean-forward="true" selection-start-line="724" selection-start-column="25" selection-end-line="724" selection-end-column="25" />
+            <state relative-caret-position="37">
+              <caret line="726" column="7" selection-start-line="726" selection-start-column="7" selection-end-line="726" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,17 +54,17 @@
       <file leaf-file-name="LinkedListLeetCode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ning/array/LinkedListLeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="369" column="7" selection-start-line="369" selection-start-column="7" selection-end-line="369" selection-end-column="7" />
+            <state relative-caret-position="524">
+              <caret line="386" column="33" lean-forward="true" selection-start-line="386" selection-start-column="33" selection-end-line="386" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BinarySearchLeetCode.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BinarySearchLeetCode.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ning/array/BinarySearchLeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="317" column="28" selection-start-line="317" selection-start-column="28" selection-end-line="317" selection-end-column="28" />
+            <state relative-caret-position="-116">
+              <caret line="312" column="60" selection-start-line="312" selection-start-column="53" selection-end-line="312" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -119,7 +115,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-11" />
     <option name="width" value="1940" />
     <option name="height" value="1047" />
@@ -130,7 +126,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -149,12 +145,19 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="array" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="array" type="462c0819:PsiDirectoryNode" />
+              <item name="ArrayLeetCode" type="1a9f42e2:ClassTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -182,7 +185,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ArrayLeetCode">
+  <component name="RunManager" selected="Application.BinarySearchLeetCode">
     <configuration name="ArrayLeetCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ning.array.ArrayLeetCode" />
       <module name="Leetcode" />
@@ -264,8 +267,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ArrayLeetCode" />
         <item itemvalue="Application.BinarySearchLeetCode" />
+        <item itemvalue="Application.ArrayLeetCode" />
         <item itemvalue="Application.LinkedListLeetCode" />
       </list>
     </recent_temporary>
@@ -320,15 +323,16 @@
       <workItem from="1618553404101" duration="1186000" />
       <workItem from="1618562470295" duration="1589000" />
       <workItem from="1618672421500" duration="391000" />
-      <workItem from="1618756633409" duration="718000" />
+      <workItem from="1618756633409" duration="1036000" />
+      <workItem from="1618815773914" duration="1129000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131108000" />
+    <option name="totallyTimeSpent" value="132542000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="0" width="1940" height="1067" extended-state="0" />
+    <frame x="-11" y="0" width="1940" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -340,19 +344,19 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30542988" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.2090708" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25553098" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32964602" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21489362" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21702127" />
       <window_info anchor="right" id="Database" order="3" weight="0.32978722" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40707964" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -616,27 +620,27 @@
     <entry file="file://$PROJECT_DIR$/Leetcode.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="726" column="7" selection-start-line="726" selection-start-column="7" selection-end-line="726" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ning/array/LinkedListLeetCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="369" column="7" selection-start-line="369" selection-start-column="7" selection-end-line="369" selection-end-column="7" />
+        <state relative-caret-position="524">
+          <caret line="386" column="33" lean-forward="true" selection-start-line="386" selection-start-column="33" selection-end-line="386" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ning/array/BinarySearchLeetCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="317" column="28" selection-start-line="317" selection-start-column="28" selection-end-line="317" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ning/array/ArrayLeetCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="724" column="25" lean-forward="true" selection-start-line="724" selection-start-column="25" selection-end-line="724" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-116">
+          <caret line="312" column="60" selection-start-line="312" selection-start-column="53" selection-end-line="312" selection-end-column="60" />
         </state>
       </provider>
     </entry>
