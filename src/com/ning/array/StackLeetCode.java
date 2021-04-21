@@ -39,4 +39,34 @@ public class StackLeetCode {
         }
         return stack.isEmpty();//返回栈是否为空
     }
+    /**
+     time:2021/4/21  155. 最小栈
+     设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
+     push(x) —— 将元素 x 推入栈中。
+     pop() —— 删除栈顶的元素。
+     top() —— 获取栈顶元素。
+     getMin() —— 检索栈中的最小元素。
+     最小栈 时间复杂度：o(1) 空间复杂度o(n) n为连续插入n个元素
+     */
+    class minStack {
+        Stack<Integer> stack = new Stack<>();
+        Stack<Integer> minStack = new Stack<>();
+        public void setMinStack() {
+            minStack.push(Integer.MAX_VALUE);
+        }
+        public void push(int val) {
+            stack.push(val);
+            minStack.push(Math.min(minStack.peek(),val));
+        }
+        public void pop() {
+            stack.pop();
+            minStack.pop();
+        }
+        public int top() {
+            return stack.peek();
+        }
+        public int getMin() {
+            return minStack.peek();
+        }
+    }
 }
