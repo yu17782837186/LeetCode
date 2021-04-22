@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 二分查找
+ * 二分查找 
  */
 public class BinarySearchLeetCode {
     public static void main(String[] args) {

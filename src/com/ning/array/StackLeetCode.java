@@ -1,8 +1,6 @@
 package com.ning.array;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 public class StackLeetCode {
     public static void main(String[] args) {
@@ -67,6 +65,46 @@ public class StackLeetCode {
         }
         public int getMin() {
             return minStack.peek();
+        }
+    }
+    /**
+     time:2021/4/22 155. 最小栈
+     设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
+     push(x) —— 将元素 x 推入栈中。
+     pop() —— 删除栈顶的元素。
+     top() —— 获取栈顶元素。
+     getMin() —— 检索栈中的最小元素。
+     队列实现栈 时间复杂度：入队为o(n) 空间复杂度o(n) n为栈内的元素
+     */
+    class MyStack {
+        Queue<Integer> queue1;
+        Queue<Integer> queue2;
+
+        public MyStack() {
+            queue1 = new LinkedList<>();
+            queue2 = new LinkedList<>();
+        }
+
+        public void push(int x) {
+            queue2.offer(x);
+            while (!queue1.isEmpty()) {
+                queue2.offer(queue1.poll());
+            }
+            Queue<Integer> tmp = queue1;
+            queue1 = queue2;
+            queue2 = tmp;
+        }
+
+        public int pop() {
+            return queue1.poll();
+        }
+
+        public int top() {
+            return queue1.peek();
+        }
+
+        public boolean empty() {
+            return queue1.isEmpty();
         }
     }
 }
