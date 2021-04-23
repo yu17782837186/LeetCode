@@ -68,13 +68,17 @@ public class StackLeetCode {
         }
     }
     /**
-     time:2021/4/22 155. 最小栈
-     设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
-     push(x) —— 将元素 x 推入栈中。
-     pop() —— 删除栈顶的元素。
-     top() —— 获取栈顶元素。
-     getMin() —— 检索栈中的最小元素。
-     队列实现栈 时间复杂度：入队为o(n) 空间复杂度o(n) n为栈内的元素
+     time:2021/4/22  225. 用队列实现栈
+     请你仅使用两个队列实现一个后入先出（LIFO）的栈，并支持普通队列的全部四种操作（push、top、pop 和 empty）。
+     实现 MyStack 类：
+     void push(int x) 将元素 x 压入栈顶。
+     int pop() 移除并返回栈顶元素。
+     int top() 返回栈顶元素。
+     boolean empty() 如果栈是空的，返回 true ；否则，返回 false 。
+     注意：
+     你只能使用队列的基本操作 —— 也就是 push to back、peek/pop from front、size 和 is empty 这些操作。
+     你所使用的语言也许不支持队列。 你可以使用 list （列表）或者 deque（双端队列）来模拟一个队列 , 只要是标准的队列操作即可。
+     队列实现栈 时间复杂度：o(1) 空间复杂度o(n) n为队列中的元素
      */
     class MyStack {
         Queue<Integer> queue1;
@@ -86,9 +90,9 @@ public class StackLeetCode {
         }
 
         public void push(int x) {
-            queue2.offer(x);
+            queue2.add(x);
             while (!queue1.isEmpty()) {
-                queue2.offer(queue1.poll());
+                queue2.add(queue1.poll());
             }
             Queue<Integer> tmp = queue1;
             queue1 = queue2;
@@ -105,6 +109,52 @@ public class StackLeetCode {
 
         public boolean empty() {
             return queue1.isEmpty();
+        }
+    }
+    /**
+     time:2021/4/23 232. 用栈实现队列
+     请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）：
+     实现 MyQueue 类：
+     void push(int x) 将元素 x 推到队列的末尾
+     int pop() 从队列的开头移除并返回元素
+     int peek() 返回队列开头的元素
+     boolean empty() 如果队列为空，返回 true ；否则，返回 false
+     说明：
+     你只能使用标准的栈操作 —— 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的。
+     你所使用的语言也许不支持栈。你可以使用 list 或者 deque（双端队列）来模拟一个栈，只要是标准的栈操作即可。
+     队列实现栈 时间复杂度：o(1) 空间复杂度o(n) n为栈内的元素
+     */
+    class MyQueue{
+        Stack<Integer> stack1;
+        Stack<Integer> stack2;
+        public MyQueue() {
+            stack1 = new Stack<>();
+            stack2 = new Stack<>();
+        }
+        //入队列
+        public void push(int val) {
+            stack1.push(val);//入队列
+        }
+        //模拟出队列
+        public int pop() {
+            if(stack2.isEmpty()) {//栈2为空
+                while(!stack1.isEmpty()) {//栈1不为空 栈1出栈 入栈2
+                    stack2.push(stack1.pop());
+                }
+            }
+            return stack2.pop();//栈2出栈即为出队列的情况
+        }
+        //返回栈顶元素
+        public int peek() {
+            if(stack2.isEmpty()) {
+                while(!stack1.isEmpty()) {
+                    stack2.push(stack1.pop());
+                }
+            }
+            return stack2.peek();
+        }
+        public boolean isEmpty() {
+            return stack1.isEmpty() && stack2.isEmpty();
         }
     }
 }
