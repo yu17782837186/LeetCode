@@ -6,7 +6,9 @@ public class StackLeetCode {
     public static void main(String[] args) {
 //        System.out.println(bracketMatch(new String("([)]")));
 
-        System.out.println(compareString(new String("ab#c"),new String("ad#c")));
+//        System.out.println(compareString(new String("ab#c"),new String("ad#c")));
+
+        System.out.println(removeDuplicate(new String("abbaca")));
     }
     /**
      time:2021/4/20  20. 有效的括号
@@ -215,6 +217,29 @@ public class StackLeetCode {
                 if(sb.length() > 0) {
                     sb.deleteCharAt(sb.length()-1);
                 }
+            }
+        }
+        return sb.toString();
+    }
+    /**
+     time:2021/4/25 1047. 删除字符串中的所有相邻重复项
+     给出由小写字母组成的字符串 S，重复项删除操作会选择两个相邻且相同的字母，并删除它们。
+     在 S 上反复执行重复项删除操作，直到无法继续删除。
+     在完成所有重复项删除操作后返回最终的字符串。答案保证唯一。
+     栈：时间复杂度:o(n) 空间复杂度:o(1)
+     */
+    public static String removeDuplicate(String s) {
+        StringBuilder sb = new StringBuilder();//StringBuilder具有栈的作用
+        int top = -1;//栈顶
+        for(int i = 0;i < s.length();i++) {//便利字符串
+            char ch = s.charAt(i);
+            if(top >= 0 && sb.charAt(top) == ch) {//栈顶元素与当前字符相等 就删除 并且top--
+                sb.deleteCharAt(top);
+                top--;
+            }else {//如果栈顶元素与当前字符不等  入栈 top++
+                sb.append(ch);
+                top++;
+
             }
         }
         return sb.toString();
